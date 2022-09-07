@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>clients - Go Documentation Server</title>
+
+<link type="text/css" rel="stylesheet" href="../../lib/godoc/style.css">
+
+<script>window.initFuncs = [];</script>
+<script src="../../lib/godoc/jquery.js" defer></script>
+
+
+
+<script>var goVersion = "go1.18.6";</script>
+<script src="../../lib/godoc/godocs.js" defer></script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="../index.html">Go Documentation Server</a></div>
+<div class="top-heading" id="heading-narrow"><a href="../index.html">GoDoc</a></div>
+<a href="index.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="http://localhost:6060/search">
+<div id="menu">
+
+<span class="search-box"><input type="search" id="search" name="q" placeholder="Search" aria-label="Search" required><button type="submit"><span><!-- magnifying glass: --><svg width="24" height="24" viewBox="0 0 24 24"><title>submit search</title><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg></span></button></span>
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>
+    Package clients
+    <span class="text-muted"></span>
+  </h1>
+
+
+
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "clients"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="index.html#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="index.html#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				
+				
+			</div>
+		</div>
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+				<dd><a href="index.html#pkg-constants">Constants</a></dd>
+			
+			
+			
+			
+				
+				<dd><a href="index.html#CloudFunctionClient">type CloudFunctionClient</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewCloudFunctionClient">func NewCloudFunctionClient() *CloudFunctionClient</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#CloudFunctionClient.AddFilterParams">func (c *CloudFunctionClient) AddFilterParams(params *cdata.StringValueMap, filter *cdata.FilterParams) *cdata.StringValueMap</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#CloudFunctionClient.AddPagingParams">func (c *CloudFunctionClient) AddPagingParams(params *cdata.StringValueMap, paging *cdata.PagingParams) *cdata.StringValueMap</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#CloudFunctionClient.Call">func (c *CloudFunctionClient) Call(ctx context.Context, cmd string, correlationId string, args *cdata.AnyValueMap) (*http.Response, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#CloudFunctionClient.Close">func (c *CloudFunctionClient) Close(ctx context.Context, correlationId string) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#CloudFunctionClient.Configure">func (c *CloudFunctionClient) Configure(ctx context.Context, config *cconf.ConfigParams)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#CloudFunctionClient.Instrument">func (c *CloudFunctionClient) Instrument(ctx context.Context, correlationId string, name string) *rpcsrv.InstrumentTiming</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#CloudFunctionClient.IsOpen">func (c *CloudFunctionClient) IsOpen() bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#CloudFunctionClient.Open">func (c *CloudFunctionClient) Open(ctx context.Context, correlationId string) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#CloudFunctionClient.SetReferences">func (c *CloudFunctionClient) SetReferences(ctx context.Context, references crefer.IReferences)</a></dd>
+				
+			
+				
+				<dd><a href="index.html#CommandableCloudFunctionClient">type CommandableCloudFunctionClient</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewCommandableCloudFunctionClient">func NewCommandableCloudFunctionClient(name string) *CommandableCloudFunctionClient</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#CommandableCloudFunctionClient.CallCommand">func (c *CommandableCloudFunctionClient) CallCommand(ctx context.Context, cmd string, correlationId string, params *cdata.AnyValueMap) (*http.Response, error)</a></dd>
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h3>Package files</h3>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="http://localhost:6060/src/clients/CloudFunctionClient.go">CloudFunctionClient.go</a>
+			
+				<a href="http://localhost:6060/src/clients/CommandableCloudFunctionClient.go">CommandableCloudFunctionClient.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		
+
+		
+			<h2 id="pkg-constants">Constants</h2>
+			
+				
+				<pre>const (
+    <span id="DefaultConnectTimeout">DefaultConnectTimeout</span> = 10000
+    <span id="DefaultTimeout">DefaultTimeout</span>        = 10000
+    <span id="DefaultRetriesCount">DefaultRetriesCount</span>   = 3
+)</pre>
+			
+		
+		
+		
+		
+			
+			
+			<h2 id="CloudFunctionClient">type <a href="http://localhost:6060/src/clients/CloudFunctionClient.go?s=3387:4237#L76">CloudFunctionClient</a>
+				<a class="permalink" href="index.html#CloudFunctionClient">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Abstract client that calls Google Functions.
+</p>
+<p>
+When making calls &#34;cmd&#34; parameter determines which what action shall be called, while
+other parameters are passed to the action itself.
+</p>
+<pre>Configuration parameters
+	- connections:
+		- uri:           full connection uri with specific app and function name
+		- protocol:      connection protocol
+		- project_id:    is your Google Cloud Platform project ID
+		- region:        is the region where your function is deployed
+		- function:      is the name of the HTTP function you deployed
+		- org_id:        organization name
+	- options:
+		- retries:               number of retries (default: 3)
+		- connect_timeout:       connection timeout in milliseconds (default: 10 sec)
+		- timeout:               invocation timeout in milliseconds (default: 10 sec)
+	- credentials:
+		- account: the service account name
+		- auth_token:    Google-generated ID token or null if using custom auth (IAM)
+
+References
+	- *:logger:*:*:1.0				(optional) ILogger components to pass log messages
+	- *:counters:*:*:1.0			(optional) ICounters components to pass collected measurements
+	- *:discovery:*:*:1.0			(optional) IDiscovery services to resolve connection
+	- *:credential-store:*:*:1.0	(optional) Credential stores to resolve credentials
+</pre>
+<p>
+see CloudFunction, CommandableGoogleClient
+</p>
+<pre>Example:
+	type MyCloudFunctionClient struct {
+		clients.CloudFunctionClient
+	}
+
+	func NewMyCloudFunctionClient() *MyCloudFunctionClient {
+		return &amp;MyCloudFunctionClient{
+			CloudFunctionClient: *gcpclient.NewCloudFunctionClient(),
+		}
+	}
+
+	func (c *MyCloudFunctionClient) GetData(ctx context.Context, correlationId string, id string) MyData {
+		timing := c.Instrument(ctx, correlationId, &#34;myclient.get_data&#34;)
+
+		response, err := c.Call(ctx, &#34;get_data&#34;, correlationId, data.NewAnyValueMapFromTuples(&#34;id&#34;, dummyId))
+
+		defer timing.EndTiming(ctx, err)
+		return rpcclients.HandleHttpResponse[MyData](response, correlationId)
+	}
+
+	...
+
+	client := NewMyCloudFunctionClient()
+	client.Configure(config.NewConfigParamsFromTuples(
+		&#34;connection.uri&#34;, &#34;<a href="http://region-id.cloudfunctions.net/myfunction">http://region-id.cloudfunctions.net/myfunction</a>&#34;,
+		&#34;connection.protocol&#34;, &#34;http&#34;,
+		&#34;connection.region&#34;, &#34;region&#34;,
+		&#34;connection.function&#34;, &#34;myfunction&#34;,
+		&#34;connection.project_id&#34;, &#34;id&#34;,
+		&#34;credential.auth_token&#34;, &#34;XXX&#34;,
+	))
+	result := client.GetData(&#34;123&#34;, &#34;1&#34;)
+</pre>
+
+			<pre>type CloudFunctionClient struct {
+    <span class="comment">//The HTTP client.</span>
+<span id="CloudFunctionClient.Client"></span>    Client *<a href="http://localhost:6060/pkg/net/http/">http</a>.<a href="http://localhost:6060/pkg/net/http/#Client">Client</a>
+    <span class="comment">// The Google Function connection parameters</span>
+<span id="CloudFunctionClient.Connection"></span>    Connection *<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-gcp-gox/connect/">gcpconn</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-gcp-gox/connect/#GcpConnectionParams">GcpConnectionParams</a>
+    <span class="comment">//The number of retries.</span>
+<span id="CloudFunctionClient.Retries"></span>    Retries <a href="http://localhost:6060/pkg/builtin/#int">int</a>
+    <span class="comment">// The default headers to be added to every request.</span>
+<span id="CloudFunctionClient.Headers"></span>    Headers *<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-commons-gox/data/">cdata</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-commons-gox/data/#StringValueMap">StringValueMap</a>
+    <span class="comment">//The connection timeout in milliseconds.</span>
+<span id="CloudFunctionClient.ConnectTimeout"></span>    ConnectTimeout <a href="http://localhost:6060/pkg/builtin/#int">int</a>
+    <span class="comment">//The invocation timeout in milliseconds.</span>
+<span id="CloudFunctionClient.Timeout"></span>    Timeout <a href="http://localhost:6060/pkg/builtin/#int">int</a>
+    <span class="comment">//The remote service uri which is calculated on open.</span>
+<span id="CloudFunctionClient.Uri"></span>    Uri <a href="http://localhost:6060/pkg/builtin/#string">string</a>
+    <span class="comment">//The connection resolver.</span>
+<span id="CloudFunctionClient.ConnectionResolver"></span>    ConnectionResolver *<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-gcp-gox/connect/">gcpconn</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-gcp-gox/connect/#GcpConnectionResolver">GcpConnectionResolver</a>
+    <span class="comment">//The dependency resolver.</span>
+<span id="CloudFunctionClient.DependencyResolver"></span>    DependencyResolver *<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-commons-gox/refer/">crefer</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-commons-gox/refer/#DependencyResolver">DependencyResolver</a>
+
+    <span class="comment">//The logger.</span>
+<span id="CloudFunctionClient.Logger"></span>    Logger *<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-components-gox/log/">clog</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-components-gox/log/#CompositeLogger">CompositeLogger</a>
+    <span class="comment">//The performance counters.</span>
+<span id="CloudFunctionClient.Counters"></span>    Counters *<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-components-gox/count/">ccount</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-components-gox/count/#CompositeCounters">CompositeCounters</a>
+    <span class="comment">// The tracer.</span>
+<span id="CloudFunctionClient.Tracer"></span>    Tracer *<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-components-gox/trace/">ctrace</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-components-gox/trace/#CompositeTracer">CompositeTracer</a>
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewCloudFunctionClient">func <a href="http://localhost:6060/src/clients/CloudFunctionClient.go?s=4395:4445#L113">NewCloudFunctionClient</a>
+					<a class="permalink" href="index.html#NewCloudFunctionClient">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewCloudFunctionClient() *<a href="index.html#CloudFunctionClient">CloudFunctionClient</a></pre>
+				<p>
+Creates new instance of CloudFunctionClient
+</p>
+
+				
+				
+			
+
+			
+				
+				<h3 id="CloudFunctionClient.AddFilterParams">func (*CloudFunctionClient) <a href="http://localhost:6060/src/clients/CloudFunctionClient.go?s=10599:10724#L305">AddFilterParams</a>
+					<a class="permalink" href="index.html#CloudFunctionClient.AddFilterParams">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#CloudFunctionClient">CloudFunctionClient</a>) AddFilterParams(params *<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-commons-gox/data/">cdata</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-commons-gox/data/#StringValueMap">StringValueMap</a>, filter *<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-commons-gox/data/">cdata</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-commons-gox/data/#FilterParams">FilterParams</a>) *<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-commons-gox/data/">cdata</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-commons-gox/data/#StringValueMap">StringValueMap</a></pre>
+				<p>
+AddFilterParams method are adds filter parameters (with the same name as they defined)
+to invocation parameter map.
+</p>
+<pre>Parameters:
+	- params  *cdata.StringValueMap      invocation parameters.
+	- filter  *cdata.FilterParams     (optional) filter parameters
+Returns: invocation parameters with added filter parameters.
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="CloudFunctionClient.AddPagingParams">func (*CloudFunctionClient) <a href="http://localhost:6060/src/clients/CloudFunctionClient.go?s=11188:11313#L323">AddPagingParams</a>
+					<a class="permalink" href="index.html#CloudFunctionClient.AddPagingParams">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#CloudFunctionClient">CloudFunctionClient</a>) AddPagingParams(params *<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-commons-gox/data/">cdata</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-commons-gox/data/#StringValueMap">StringValueMap</a>, paging *<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-commons-gox/data/">cdata</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-commons-gox/data/#PagingParams">PagingParams</a>) *<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-commons-gox/data/">cdata</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-commons-gox/data/#StringValueMap">StringValueMap</a></pre>
+				<p>
+AddPagingParams method are adds paging parameters (skip, take, total) to invocation parameter map.
+Parameters:
+</p>
+<pre>- params        invocation parameters.
+- paging        (optional) paging parameters
+</pre>
+<p>
+Return invocation parameters with added paging parameters.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="CloudFunctionClient.Call">func (*CloudFunctionClient) <a href="http://localhost:6060/src/clients/CloudFunctionClient.go?s=8794:8934#L231">Call</a>
+					<a class="permalink" href="index.html#CloudFunctionClient.Call">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#CloudFunctionClient">CloudFunctionClient</a>) Call(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, cmd <a href="http://localhost:6060/pkg/builtin/#string">string</a>, correlationId <a href="http://localhost:6060/pkg/builtin/#string">string</a>,
+    args *<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-commons-gox/data/">cdata</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-commons-gox/data/#AnyValueMap">AnyValueMap</a>) (*<a href="http://localhost:6060/pkg/net/http/">http</a>.<a href="http://localhost:6060/pkg/net/http/#Response">Response</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+				<p>
+Performs Google Function invocation.
+Parameters:
+</p>
+<pre>- cmd	an action name to be called.
+- correlationId	(optional) transaction id to trace execution through call chain.
+- args	action arguments
+</pre>
+<p>
+Returns action result.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="CloudFunctionClient.Close">func (*CloudFunctionClient) <a href="http://localhost:6060/src/clients/CloudFunctionClient.go?s=8305:8389#L216">Close</a>
+					<a class="permalink" href="index.html#CloudFunctionClient.Close">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#CloudFunctionClient">CloudFunctionClient</a>) Close(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, correlationId <a href="http://localhost:6060/pkg/builtin/#string">string</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+Closes component and frees used resources.
+Parameters:
+</p>
+<pre>-correlationId	(optional) transaction id to trace execution through call chain.
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="CloudFunctionClient.Configure">func (*CloudFunctionClient) <a href="http://localhost:6060/src/clients/CloudFunctionClient.go?s=5167:5255#L136">Configure</a>
+					<a class="permalink" href="index.html#CloudFunctionClient.Configure">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#CloudFunctionClient">CloudFunctionClient</a>) Configure(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, config *<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-commons-gox/config/">cconf</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-commons-gox/config/#ConfigParams">ConfigParams</a>)</pre>
+				<p>
+Configure object by passing configuration parameters.
+</p>
+<pre>Parameters:
+	- ctx context.Context
+	- config: ConfigParams configuration parameters to be set.
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="CloudFunctionClient.Instrument">func (*CloudFunctionClient) <a href="http://localhost:6060/src/clients/CloudFunctionClient.go?s=6543:6664#L164">Instrument</a>
+					<a class="permalink" href="index.html#CloudFunctionClient.Instrument">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#CloudFunctionClient">CloudFunctionClient</a>) Instrument(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, correlationId <a href="http://localhost:6060/pkg/builtin/#string">string</a>, name <a href="http://localhost:6060/pkg/builtin/#string">string</a>) *<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-rpc-gox/services/">rpcsrv</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-rpc-gox/services/#InstrumentTiming">InstrumentTiming</a></pre>
+				<p>
+Instrument method are adds instrumentation to log calls and measure call time.
+It returns a services.InstrumentTiming object that is used to end the time measurement.
+</p>
+<pre>Parameters:
+	- ctx context.Context
+	- correlationId string (optional) transaction id to trace execution through call chain.
+	- name string a method name.
+Returns: services.InstrumentTiming object to end the time measurement.
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="CloudFunctionClient.IsOpen">func (*CloudFunctionClient) <a href="http://localhost:6060/src/clients/CloudFunctionClient.go?s=7162:7205#L175">IsOpen</a>
+					<a class="permalink" href="index.html#CloudFunctionClient.IsOpen">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#CloudFunctionClient">CloudFunctionClient</a>) IsOpen() <a href="http://localhost:6060/pkg/builtin/#bool">bool</a></pre>
+				<p>
+IsOpen Checks if the component is opened.
+</p>
+<pre>Returns: bool true if the component has been opened and false otherwise.
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="CloudFunctionClient.Open">func (*CloudFunctionClient) <a href="http://localhost:6060/src/clients/CloudFunctionClient.go?s=7413:7496#L184">Open</a>
+					<a class="permalink" href="index.html#CloudFunctionClient.Open">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#CloudFunctionClient">CloudFunctionClient</a>) Open(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, correlationId <a href="http://localhost:6060/pkg/builtin/#string">string</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+Open opens the component.
+</p>
+<pre>Parameters:
+	- ctx context.Context
+	- correlationId: string transaction id to trace execution through call chain.
+Return: error
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="CloudFunctionClient.SetReferences">func (*CloudFunctionClient) <a href="http://localhost:6060/src/clients/CloudFunctionClient.go?s=5825:5920#L150">SetReferences</a>
+					<a class="permalink" href="index.html#CloudFunctionClient.SetReferences">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#CloudFunctionClient">CloudFunctionClient</a>) SetReferences(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, references <a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-commons-gox/refer/">crefer</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-commons-gox/refer/#IReferences">IReferences</a>)</pre>
+				<p>
+SetReferences sets references to dependent components.
+</p>
+<pre>see IReferences
+Parameters:
+	- ctx context.Context
+	- references IReferences references to locate the component dependencies.
+</pre>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="CommandableCloudFunctionClient">type <a href="http://localhost:6060/src/clients/CommandableCloudFunctionClient.go?s=2700:2783#L62">CommandableCloudFunctionClient</a>
+				<a class="permalink" href="index.html#CommandableCloudFunctionClient">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Abstract client that calls commandable Google Cloud Functions.
+</p>
+<p>
+Commandable services are generated automatically for ICommandable objects.
+Each command is exposed as action determined by &#34;cmd&#34; parameter.
+</p>
+<pre>Configuration parameters
+	- connections:
+		- uri:           full connection uri with specific app and function name
+		- protocol:      connection protocol
+		- project_id:    is your Google Cloud Platform project ID
+		- region:        is the region where your function is deployed
+		- function:      is the name of the HTTP function you deployed
+		- org_id:        organization name
+	- options:
+		- retries:               number of retries (default: 3)
+		- connect_timeout:       connection timeout in milliseconds (default: 10 sec)
+		- timeout:               invocation timeout in milliseconds (default: 10 sec)
+	- credentials:
+		- account: the service account name
+		- auth_token:    Google-generated ID token or null if using custom auth (IAM)
+
+References
+	- *:logger:*:*:1.0				(optional) ILogger components to pass log messages
+	- *:counters:*:*:1.0			(optional) ICounters components to pass collected measurements
+	- *:discovery:*:*:1.0			(optional) IDiscovery services to resolve connection
+	- *:credential-store:*:*:1.0	(optional) Credential stores to resolve credentials
+</pre>
+<p>
+see CloudFunction
+</p>
+<pre>Exammple:
+	type MyCommandableGoogleClient struct {
+		clients.CommandableCloudFunctionClient
+	}
+
+	func NewMyCommandableGoogleClient() *MyCommandableGoogleClient {
+		return &amp;MyCommandableGoogleClient{
+			CommandableCloudFunctionClient: *gcpclient.NewCommandableCloudFunctionClient(),
+		}
+	}
+
+	func (c *MyCommandableGoogleClient) GetData(ctx context.Context, correlationId string, id string) MyData {
+		response, err := c.CallCommand(ctx, &#34;dummies.get_dummies&#34;, correlationId, cdata.NewAnyValueMapFromTuples(&#34;id&#34;, id))
+		if err != nil {
+			return MyData{}, err
+		}
+
+		return rpcclient.HandleHttpResponse[MyData](response, correlationId)
+	}
+
+	...
+	client := NewMyCommandableGoogleClient()
+	client.Configure(config.NewConfigParamsFromTuples(
+		&#34;connection.uri&#34;, &#34;<a href="http://region-id.cloudfunctions.net/myfunction">http://region-id.cloudfunctions.net/myfunction</a>&#34;,
+		&#34;connection.protocol&#34;, &#34;http&#34;,
+		&#34;connection.region&#34;, &#34;region&#34;,
+		&#34;connection.function&#34;, &#34;myfunction&#34;,
+		&#34;connection.project_id&#34;, &#34;id&#34;,
+		&#34;credential.auth_token&#34;, &#34;XXX&#34;,
+	))
+	result := client.GetData(&#34;123&#34;, &#34;1&#34;)
+	...
+</pre>
+
+			<pre>type CommandableCloudFunctionClient struct {
+    <a href="index.html#CloudFunctionClient">CloudFunctionClient</a>
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewCommandableCloudFunctionClient">func <a href="http://localhost:6060/src/clients/CommandableCloudFunctionClient.go?s=2874:2957#L70">NewCommandableCloudFunctionClient</a>
+					<a class="permalink" href="index.html#NewCommandableCloudFunctionClient">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewCommandableCloudFunctionClient(name <a href="http://localhost:6060/pkg/builtin/#string">string</a>) *<a href="index.html#CommandableCloudFunctionClient">CommandableCloudFunctionClient</a></pre>
+				<p>
+Creates a new instance of this client.
+Parameters:
+</p>
+<pre>- name	a service name.
+</pre>
+
+				
+				
+			
+
+			
+				
+				<h3 id="CommandableCloudFunctionClient.CallCommand">func (*CommandableCloudFunctionClient) <a href="http://localhost:6060/src/clients/CommandableCloudFunctionClient.go?s=3387:3545#L82">CallCommand</a>
+					<a class="permalink" href="index.html#CommandableCloudFunctionClient.CallCommand">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#CommandableCloudFunctionClient">CommandableCloudFunctionClient</a>) CallCommand(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, cmd <a href="http://localhost:6060/pkg/builtin/#string">string</a>, correlationId <a href="http://localhost:6060/pkg/builtin/#string">string</a>, params *<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-commons-gox/data/">cdata</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-commons-gox/data/#AnyValueMap">AnyValueMap</a>) (*<a href="http://localhost:6060/pkg/net/http/">http</a>.<a href="http://localhost:6060/pkg/net/http/#Response">Response</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+				<p>
+Calls a remote action in Google Function.
+The name of the action is added as &#34;cmd&#34; parameter
+to the action parameters.
+Parameters:
+</p>
+<pre>- cmd	an action name
+- correlationId	(optional) transaction id to trace execution through call chain.
+- params	command parameters.
+</pre>
+<p>
+Returns action result.
+</p>
+
+				
+				
+				
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+<div id="footer">
+Build version go1.18.6.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="http://localhost:6060/LICENSE">BSD license</a>.<br>
+<a href="https://golang.org/doc/tos.html">Terms of Service</a> |
+<a href="https://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+</body>
+</html>

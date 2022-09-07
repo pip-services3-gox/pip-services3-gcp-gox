@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>connect - Go Documentation Server</title>
+
+<link type="text/css" rel="stylesheet" href="../../lib/godoc/style.css">
+
+<script>window.initFuncs = [];</script>
+<script src="../../lib/godoc/jquery.js" defer></script>
+
+
+
+<script>var goVersion = "go1.18.6";</script>
+<script src="../../lib/godoc/godocs.js" defer></script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="../index.html">Go Documentation Server</a></div>
+<div class="top-heading" id="heading-narrow"><a href="../index.html">GoDoc</a></div>
+<a href="index.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="http://localhost:6060/search">
+<div id="menu">
+
+<span class="search-box"><input type="search" id="search" name="q" placeholder="Search" aria-label="Search" required><button type="submit"><span><!-- magnifying glass: --><svg width="24" height="24" viewBox="0 0 24 24"><title>submit search</title><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg></span></button></span>
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>
+    Package connect
+    <span class="text-muted"></span>
+  </h1>
+
+
+
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "connect"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="index.html#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="index.html#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				
+				
+			</div>
+		</div>
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+			
+			
+			
+				
+				<dd><a href="index.html#GcpConnectionParams">type GcpConnectionParams</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewEmptyGcpConnectionParams">func NewEmptyGcpConnectionParams() *GcpConnectionParams</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewGcpConnectionParams">func NewGcpConnectionParams(values map[string]string) *GcpConnectionParams</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewGcpConnectionParamsFromConfig">func NewGcpConnectionParamsFromConfig(config *cconf.ConfigParams) *GcpConnectionParams</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewGcpConnectionParamsFromMaps">func NewGcpConnectionParamsFromMaps(configs ...map[string]string) *GcpConnectionParams</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewGcpConnectionParamsFromString">func NewGcpConnectionParamsFromString(line string) *GcpConnectionParams</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewGcpConnectionParamsFromTuples">func NewGcpConnectionParamsFromTuples(tuples ...any) *GcpConnectionParams</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#GcpConnectionParams.Account">func (c *GcpConnectionParams) Account() (string, bool)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#GcpConnectionParams.AuthToken">func (c *GcpConnectionParams) AuthToken() (string, bool)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#GcpConnectionParams.Function">func (c *GcpConnectionParams) Function() (string, bool)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#GcpConnectionParams.OrgId">func (c *GcpConnectionParams) OrgId() (string, bool)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#GcpConnectionParams.ProjectId">func (c *GcpConnectionParams) ProjectId() (string, bool)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#GcpConnectionParams.Protocol">func (c *GcpConnectionParams) Protocol() (string, bool)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#GcpConnectionParams.Region">func (c *GcpConnectionParams) Region() (string, bool)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#GcpConnectionParams.SetAccount">func (c *GcpConnectionParams) SetAccount(value string)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#GcpConnectionParams.SetAuthToken">func (c *GcpConnectionParams) SetAuthToken(value string)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#GcpConnectionParams.SetFunction">func (c *GcpConnectionParams) SetFunction(value string)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#GcpConnectionParams.SetOrgId">func (c *GcpConnectionParams) SetOrgId(value string)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#GcpConnectionParams.SetProjectId">func (c *GcpConnectionParams) SetProjectId(value string)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#GcpConnectionParams.SetProtocol">func (c *GcpConnectionParams) SetProtocol(value string)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#GcpConnectionParams.SetRegion">func (c *GcpConnectionParams) SetRegion(value string)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#GcpConnectionParams.SetUri">func (c *GcpConnectionParams) SetUri(value string)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#GcpConnectionParams.Uri">func (c *GcpConnectionParams) Uri() (string, bool)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#GcpConnectionParams.Validate">func (c *GcpConnectionParams) Validate(correlationId string) error</a></dd>
+				
+			
+				
+				<dd><a href="index.html#GcpConnectionResolver">type GcpConnectionResolver</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewGcpConnectionResolver">func NewGcpConnectionResolver() *GcpConnectionResolver</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#GcpConnectionResolver.Configure">func (c *GcpConnectionResolver) Configure(ctx context.Context, config *cconf.ConfigParams)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#GcpConnectionResolver.Resolve">func (c *GcpConnectionResolver) Resolve(correlationId string) (*GcpConnectionParams, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#GcpConnectionResolver.SetReferences">func (c *GcpConnectionResolver) SetReferences(ctx context.Context, references refer.IReferences)</a></dd>
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h3>Package files</h3>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="http://localhost:6060/src/connect/GcpConnectionParams.go">GcpConnectionParams.go</a>
+			
+				<a href="http://localhost:6060/src/connect/GcpConnectionResolver.go">GcpConnectionResolver.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		
+
+		
+		
+		
+		
+			
+			
+			<h2 id="GcpConnectionParams">type <a href="http://localhost:6060/src/connect/GcpConnectionParams.go?s=2169:2226#L39">GcpConnectionParams</a>
+				<a class="permalink" href="index.html#GcpConnectionParams">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Contains connection parameters to authenticate against Google
+and connect to specific Google Cloud Platform.
+</p>
+<p>
+The class is able to compose and parse Google Platform connection parameters.
+</p>
+<pre>Configuration parameters
+	- connections:
+	     - uri:           full connection uri with specific app and function name
+	     - protocol:      connection protocol
+	     - project_id:    is your Google Cloud Platform project ID
+	     - region:        is the region where your function is deployed
+	     - function:      is the name of the HTTP function you deployed
+	     - org_id:        organization name
+
+	- credentials:
+	    - account: the service account name
+	    - auth_token:    Google-generated ID token or null if using custom auth (IAM)
+</pre>
+<p>
+In addition to standard parameters CredentialParams may contain any number of custom parameters.
+</p>
+<p>
+see GcpConnectionResolver
+</p>
+<pre>Example:
+	connection := connect.NewGcpConnectionParamsFromTuples(
+		&#34;connection.uri&#34;, &#34;<a href="http://east-my_test_project.cloudfunctions.net/myfunction">http://east-my_test_project.cloudfunctions.net/myfunction</a>&#34;,
+		&#34;connection.protocol&#34;, &#34;http&#34;,
+		&#34;connection.region&#34;, &#34;east&#34;,
+		&#34;connection.function&#34;, &#34;myfunction&#34;,
+		&#34;connection.project_id&#34;, &#34;my_test_project&#34;,
+		&#34;credential.auth_token&#34;, &#34;1234&#34;,
+	)
+	uri, _ := connection.Uri()               // Result: &#34;<a href="http://east-my_test_project.cloudfunctions.net/myfunction">http://east-my_test_project.cloudfunctions.net/myfunction</a>&#34;
+	region, _ := connection.Region()         // Result: &#34;east&#34;
+	protocol, _ := connection.Protocol()     // Result: &#34;http&#34;
+	functionName, _ := connection.Function() // Result: &#34;myfunction&#34;
+	projectId, _ := connection.ProjectId()   // Result: &#34;my_test_project&#34;
+	authToken, _ := connection.AuthToken()   // Result: &#34;1234&#34;
+</pre>
+
+			<pre>type GcpConnectionParams struct {
+    <a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-commons-gox/config/">cconf</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-commons-gox/config/#ConfigParams">ConfigParams</a>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewEmptyGcpConnectionParams">func <a href="http://localhost:6060/src/connect/GcpConnectionParams.go?s=2288:2343#L44">NewEmptyGcpConnectionParams</a>
+					<a class="permalink" href="index.html#NewEmptyGcpConnectionParams">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewEmptyGcpConnectionParams() *<a href="index.html#GcpConnectionParams">GcpConnectionParams</a></pre>
+				<p>
+Creates an new instance of the connection parameters.
+</p>
+
+				
+				
+			
+				
+				<h3 id="NewGcpConnectionParams">func <a href="http://localhost:6060/src/connect/GcpConnectionParams.go?s=2604:2678#L51">NewGcpConnectionParams</a>
+					<a class="permalink" href="index.html#NewGcpConnectionParams">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewGcpConnectionParams(values map[<a href="http://localhost:6060/pkg/builtin/#string">string</a>]<a href="http://localhost:6060/pkg/builtin/#string">string</a>) *<a href="index.html#GcpConnectionParams">GcpConnectionParams</a></pre>
+				<p>
+Creates an new instance of the connection parameters.
+Parameters:
+</p>
+<pre>- values	(optional) an object to be converted into key-value pairs to initialize this connection.
+</pre>
+
+				
+				
+			
+				
+				<h3 id="NewGcpConnectionParamsFromConfig">func <a href="http://localhost:6060/src/connect/GcpConnectionParams.go?s=3513:3599#L70">NewGcpConnectionParamsFromConfig</a>
+					<a class="permalink" href="index.html#NewGcpConnectionParamsFromConfig">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewGcpConnectionParamsFromConfig(config *<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-commons-gox/config/">cconf</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-commons-gox/config/#ConfigParams">ConfigParams</a>) *<a href="index.html#GcpConnectionParams">GcpConnectionParams</a></pre>
+				<p>
+Retrieves GcpConnectionParams from configuration parameters.
+The values are retrieves from &#34;connection&#34; and &#34;credential&#34; sections.
+Parameters:
+</p>
+<pre>- config	configuration parameters
+</pre>
+<p>
+Returns the generated GcpConnectionParams object.
+</p>
+
+				
+				
+			
+				
+				<h3 id="NewGcpConnectionParamsFromMaps">func <a href="http://localhost:6060/src/connect/GcpConnectionParams.go?s=4717:4803#L101">NewGcpConnectionParamsFromMaps</a>
+					<a class="permalink" href="index.html#NewGcpConnectionParamsFromMaps">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewGcpConnectionParamsFromMaps(configs ...map[<a href="http://localhost:6060/pkg/builtin/#string">string</a>]<a href="http://localhost:6060/pkg/builtin/#string">string</a>) *<a href="index.html#GcpConnectionParams">GcpConnectionParams</a></pre>
+				<p>
+Retrieves GcpConnectionParams from multiple configuration parameters.
+The values are retrieves from &#34;connection&#34; and &#34;credential&#34; sections.
+Parameters:
+</p>
+<pre>- configs	a list with configuration parameters
+</pre>
+<p>
+Returns the generated GcpConnectionParams object.
+</p>
+
+				
+				
+			
+				
+				<h3 id="NewGcpConnectionParamsFromString">func <a href="http://localhost:6060/src/connect/GcpConnectionParams.go?s=3081:3152#L60">NewGcpConnectionParamsFromString</a>
+					<a class="permalink" href="index.html#NewGcpConnectionParamsFromString">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewGcpConnectionParamsFromString(line <a href="http://localhost:6060/pkg/builtin/#string">string</a>) *<a href="index.html#GcpConnectionParams">GcpConnectionParams</a></pre>
+				<p>
+Creates a new GcpConnectionParams object filled with key-value pairs serialized as a string.
+Parameters:
+</p>
+<pre>- line	a string with serialized key-value pairs as &#34;key1=value1;key2=value2;...&#34;
+		Example: &#34;Key1=123;Key2=ABC;Key3=2016-09-16T00:00:00.00Z&#34;
+</pre>
+<p>
+Returns a new GcpConnectionParams object.
+</p>
+
+				
+				
+			
+				
+				<h3 id="NewGcpConnectionParamsFromTuples">func <a href="http://localhost:6060/src/connect/GcpConnectionParams.go?s=4259:4332#L91">NewGcpConnectionParamsFromTuples</a>
+					<a class="permalink" href="index.html#NewGcpConnectionParamsFromTuples">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewGcpConnectionParamsFromTuples(tuples ...<a href="http://localhost:6060/pkg/builtin/#any">any</a>) *<a href="index.html#GcpConnectionParams">GcpConnectionParams</a></pre>
+				<p>
+Creates a new ConfigParams object filled with provided key-value pairs called tuples.
+Tuples parameters contain a sequence of key1, value1, key2, value2, ... pairs.
+Parameters:
+</p>
+<pre>- tuples	the tuples to fill a new ConfigParams object.
+</pre>
+<p>
+Returns a new ConfigParams object.
+</p>
+
+				
+				
+			
+
+			
+				
+				<h3 id="GcpConnectionParams.Account">func (*GcpConnectionParams) <a href="http://localhost:6060/src/connect/GcpConnectionParams.go?s=7360:7414#L186">Account</a>
+					<a class="permalink" href="index.html#GcpConnectionParams.Account">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#GcpConnectionParams">GcpConnectionParams</a>) Account() (<a href="http://localhost:6060/pkg/builtin/#string">string</a>, <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>)</pre>
+				<p>
+Gets the service account name
+Returns the account name.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="GcpConnectionParams.AuthToken">func (*GcpConnectionParams) <a href="http://localhost:6060/src/connect/GcpConnectionParams.go?s=6974:7030#L173">AuthToken</a>
+					<a class="permalink" href="index.html#GcpConnectionParams.AuthToken">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#GcpConnectionParams">GcpConnectionParams</a>) AuthToken() (<a href="http://localhost:6060/pkg/builtin/#string">string</a>, <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>)</pre>
+				<p>
+Gets an ID token with the request to authenticate themselves
+Returns the ID token.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="GcpConnectionParams.Function">func (*GcpConnectionParams) <a href="http://localhost:6060/src/connect/GcpConnectionParams.go?s=5792:5847#L134">Function</a>
+					<a class="permalink" href="index.html#GcpConnectionParams.Function">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#GcpConnectionParams">GcpConnectionParams</a>) Function() (<a href="http://localhost:6060/pkg/builtin/#string">string</a>, <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>)</pre>
+				<p>
+Gets the Google function name.
+Returns the Google function name.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="GcpConnectionParams.OrgId">func (*GcpConnectionParams) <a href="http://localhost:6060/src/connect/GcpConnectionParams.go?s=7706:7758#L199">OrgId</a>
+					<a class="permalink" href="index.html#GcpConnectionParams.OrgId">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#GcpConnectionParams">GcpConnectionParams</a>) OrgId() (<a href="http://localhost:6060/pkg/builtin/#string">string</a>, <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>)</pre>
+				<p>
+Get organization name
+Returns the organization name.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="GcpConnectionParams.ProjectId">func (*GcpConnectionParams) <a href="http://localhost:6060/src/connect/GcpConnectionParams.go?s=6577:6633#L160">ProjectId</a>
+					<a class="permalink" href="index.html#GcpConnectionParams.ProjectId">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#GcpConnectionParams">GcpConnectionParams</a>) ProjectId() (<a href="http://localhost:6060/pkg/builtin/#string">string</a>, <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>)</pre>
+				<p>
+Gets the Google Cloud Platform project ID.
+Returns the project ID.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="GcpConnectionParams.Protocol">func (*GcpConnectionParams) <a href="http://localhost:6060/src/connect/GcpConnectionParams.go?s=5024:5079#L108">Protocol</a>
+					<a class="permalink" href="index.html#GcpConnectionParams.Protocol">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#GcpConnectionParams">GcpConnectionParams</a>) Protocol() (<a href="http://localhost:6060/pkg/builtin/#string">string</a>, <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>)</pre>
+				<p>
+Gets the Google Platform service connection protocol.
+Returns the Google service connection protocol.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="GcpConnectionParams.Region">func (*GcpConnectionParams) <a href="http://localhost:6060/src/connect/GcpConnectionParams.go?s=6188:6241#L147">Region</a>
+					<a class="permalink" href="index.html#GcpConnectionParams.Region">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#GcpConnectionParams">GcpConnectionParams</a>) Region() (<a href="http://localhost:6060/pkg/builtin/#string">string</a>, <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>)</pre>
+				<p>
+Gets the region where your function is deployed.
+Returns the region of deployed function.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="GcpConnectionParams.SetAccount">func (*GcpConnectionParams) <a href="http://localhost:6060/src/connect/GcpConnectionParams.go?s=7548:7602#L193">SetAccount</a>
+					<a class="permalink" href="index.html#GcpConnectionParams.SetAccount">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#GcpConnectionParams">GcpConnectionParams</a>) SetAccount(value <a href="http://localhost:6060/pkg/builtin/#string">string</a>)</pre>
+				<p>
+Sets the service account name
+Parameters:
+</p>
+<pre>- value	a new account name.
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="GcpConnectionParams.SetAuthToken">func (*GcpConnectionParams) <a href="http://localhost:6060/src/connect/GcpConnectionParams.go?s=7194:7250#L180">SetAuthToken</a>
+					<a class="permalink" href="index.html#GcpConnectionParams.SetAuthToken">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#GcpConnectionParams">GcpConnectionParams</a>) SetAuthToken(value <a href="http://localhost:6060/pkg/builtin/#string">string</a>)</pre>
+				<p>
+Sets an ID token with the request to authenticate themselves
+Parameters:
+</p>
+<pre>- value	a new ID token.
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="GcpConnectionParams.SetFunction">func (*GcpConnectionParams) <a href="http://localhost:6060/src/connect/GcpConnectionParams.go?s=5991:6046#L141">SetFunction</a>
+					<a class="permalink" href="index.html#GcpConnectionParams.SetFunction">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#GcpConnectionParams">GcpConnectionParams</a>) SetFunction(value <a href="http://localhost:6060/pkg/builtin/#string">string</a>)</pre>
+				<p>
+Sets the Google function name.
+Parameters:
+</p>
+<pre>- value	a new Google function name.
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="GcpConnectionParams.SetOrgId">func (*GcpConnectionParams) <a href="http://localhost:6060/src/connect/GcpConnectionParams.go?s=7889:7941#L206">SetOrgId</a>
+					<a class="permalink" href="index.html#GcpConnectionParams.SetOrgId">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#GcpConnectionParams">GcpConnectionParams</a>) SetOrgId(value <a href="http://localhost:6060/pkg/builtin/#string">string</a>)</pre>
+				<p>
+Sets organization name
+Parameters:
+</p>
+<pre>- value	a new organization name.
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="GcpConnectionParams.SetProjectId">func (*GcpConnectionParams) <a href="http://localhost:6060/src/connect/GcpConnectionParams.go?s=6781:6837#L167">SetProjectId</a>
+					<a class="permalink" href="index.html#GcpConnectionParams.SetProjectId">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#GcpConnectionParams">GcpConnectionParams</a>) SetProjectId(value <a href="http://localhost:6060/pkg/builtin/#string">string</a>)</pre>
+				<p>
+Sets the Google Cloud Platform project ID.
+Parameters:
+</p>
+<pre>- value	a new project ID.
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="GcpConnectionParams.SetProtocol">func (*GcpConnectionParams) <a href="http://localhost:6060/src/connect/GcpConnectionParams.go?s=5260:5315#L115">SetProtocol</a>
+					<a class="permalink" href="index.html#GcpConnectionParams.SetProtocol">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#GcpConnectionParams">GcpConnectionParams</a>) SetProtocol(value <a href="http://localhost:6060/pkg/builtin/#string">string</a>)</pre>
+				<p>
+Sets the Google Platform service connection protocol.
+Parameters:
+</p>
+<pre>- value	a new Google service connection protocol.
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="GcpConnectionParams.SetRegion">func (*GcpConnectionParams) <a href="http://localhost:6060/src/connect/GcpConnectionParams.go?s=6407:6460#L154">SetRegion</a>
+					<a class="permalink" href="index.html#GcpConnectionParams.SetRegion">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#GcpConnectionParams">GcpConnectionParams</a>) SetRegion(value <a href="http://localhost:6060/pkg/builtin/#string">string</a>)</pre>
+				<p>
+Sets the region where your function is deployed.
+Parameters:
+</p>
+<pre>- value	the region of deployed function.
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="GcpConnectionParams.SetUri">func (*GcpConnectionParams) <a href="http://localhost:6060/src/connect/GcpConnectionParams.go?s=5630:5680#L128">SetUri</a>
+					<a class="permalink" href="index.html#GcpConnectionParams.SetUri">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#GcpConnectionParams">GcpConnectionParams</a>) SetUri(value <a href="http://localhost:6060/pkg/builtin/#string">string</a>)</pre>
+				<p>
+Sets the Google Platform service uri.
+Parameters:
+</p>
+<pre>- value	a new Google service uri.
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="GcpConnectionParams.Uri">func (*GcpConnectionParams) <a href="http://localhost:6060/src/connect/GcpConnectionParams.go?s=5436:5486#L121">Uri</a>
+					<a class="permalink" href="index.html#GcpConnectionParams.Uri">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#GcpConnectionParams">GcpConnectionParams</a>) Uri() (<a href="http://localhost:6060/pkg/builtin/#string">string</a>, <a href="http://localhost:6060/pkg/builtin/#bool">bool</a>)</pre>
+				<p>
+Gets the Google Platform service uri.
+Returns the Google sevice uri.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="GcpConnectionParams.Validate">func (*GcpConnectionParams) <a href="http://localhost:6060/src/connect/GcpConnectionParams.go?s=8126:8192#L213">Validate</a>
+					<a class="permalink" href="index.html#GcpConnectionParams.Validate">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#GcpConnectionParams">GcpConnectionParams</a>) Validate(correlationId <a href="http://localhost:6060/pkg/builtin/#string">string</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+Validates this connection parameters
+Parameters:
+</p>
+<pre>- correlationId	(optional) transaction id to trace execution through call chain.
+</pre>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="GcpConnectionResolver">type <a href="http://localhost:6060/src/connect/GcpConnectionResolver.go?s=1895:2087#L40">GcpConnectionResolver</a>
+				<a class="permalink" href="index.html#GcpConnectionResolver">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Helper class to retrieve Google connection and credential parameters,
+validate them and compose a GcpConnectionParams value.
+</p>
+<pre>Configuration parameters
+	- connections:
+	     - uri:           full connection uri with specific app and function name
+	     - protocol:      connection protocol
+	     - project_id:    is your Google Cloud Platform project ID
+	     - region:        is the region where your function is deployed
+	     - function:      is the name of the HTTP function you deployed
+	     - org_id:        organization name
+
+	- credentials:
+	    - account: the service account name
+	    - auth_token:    Google-generated ID token or null if using custom auth (IAM)
+
+References
+	- *:credential-store:*:*:1.0	(optional) Credential stores to resolve credentials
+</pre>
+<p>
+see ConnectionParams (in the Pip.Services components package)
+</p>
+<pre>Example:
+	config := config.NewConfigParamsFromTuples(
+		&#34;connection.uri&#34;, &#34;<a href="http://east-my_test_project.cloudfunctions.net/myfunction">http://east-my_test_project.cloudfunctions.net/myfunction</a>&#34;,
+		&#34;connection.protocol&#34;, &#34;http&#34;,
+		&#34;connection.region&#34;, &#34;east&#34;,
+		&#34;connection.function&#34;, &#34;myfunction&#34;,
+		&#34;connection.project_id&#34;, &#34;my_test_project&#34;,
+		&#34;credential.auth_token&#34;, &#34;1234&#34;,
+	)
+	ctx := context.Background()
+	connectionResolver := connect.NewGcpConnectionResolver()
+	connectionResolver.Configure(ctx, config)
+	connectionResolver.SetReferences(ctx, references)
+	connectionParams, _ := connectionResolver.Resolve(&#34;123&#34;)
+</pre>
+
+			<pre>type GcpConnectionResolver struct {
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewGcpConnectionResolver">func <a href="http://localhost:6060/src/connect/GcpConnectionResolver.go?s=2141:2195#L48">NewGcpConnectionResolver</a>
+					<a class="permalink" href="index.html#NewGcpConnectionResolver">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewGcpConnectionResolver() *<a href="index.html#GcpConnectionResolver">GcpConnectionResolver</a></pre>
+				<p>
+Creates new instance of GcpConnectionResolver
+</p>
+
+				
+				
+			
+
+			
+				
+				<h3 id="GcpConnectionResolver.Configure">func (*GcpConnectionResolver) <a href="http://localhost:6060/src/connect/GcpConnectionResolver.go?s=2545:2635#L59">Configure</a>
+					<a class="permalink" href="index.html#GcpConnectionResolver.Configure">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#GcpConnectionResolver">GcpConnectionResolver</a>) Configure(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, config *<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-commons-gox/config/">cconf</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-commons-gox/config/#ConfigParams">ConfigParams</a>)</pre>
+				<p>
+Configure Configures component by passing configuration parameters.
+</p>
+<pre>Parameters:
+	- ctx context.Context
+	- config *config.ConfigParams configuration parameters to be set.
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="GcpConnectionResolver.Resolve">func (*GcpConnectionResolver) <a href="http://localhost:6060/src/connect/GcpConnectionResolver.go?s=3454:3545#L80">Resolve</a>
+					<a class="permalink" href="index.html#GcpConnectionResolver.Resolve">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#GcpConnectionResolver">GcpConnectionResolver</a>) Resolve(correlationId <a href="http://localhost:6060/pkg/builtin/#string">string</a>) (*<a href="index.html#GcpConnectionParams">GcpConnectionParams</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+				<p>
+Resolves connection and credential parameters and generates a single
+GcpConnectionParams value.
+Parameters:
+</p>
+<pre>- correlationId	(optional) transaction id to trace execution through call chain.
+</pre>
+<p>
+Returns GcpConnectionParams value or error.
+</p>
+<p>
+see IDiscovery (in the Pip.Services components package)
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="GcpConnectionResolver.SetReferences">func (*GcpConnectionResolver) <a href="http://localhost:6060/src/connect/GcpConnectionResolver.go?s=2923:3019#L68">SetReferences</a>
+					<a class="permalink" href="index.html#GcpConnectionResolver.SetReferences">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#GcpConnectionResolver">GcpConnectionResolver</a>) SetReferences(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, references <a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-commons-gox/refer/">refer</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-commons-gox/refer/#IReferences">IReferences</a>)</pre>
+				<p>
+SetReferences sets references to dependent components.
+</p>
+<pre>Parameters:
+	- ctx context.Context
+	- references refer.IReferences references to locate the component dependencies.
+</pre>
+
+				
+				
+				
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+<div id="footer">
+Build version go1.18.6.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="http://localhost:6060/LICENSE">BSD license</a>.<br>
+<a href="https://golang.org/doc/tos.html">Terms of Service</a> |
+<a href="https://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+</body>
+</html>

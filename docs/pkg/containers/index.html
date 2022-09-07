@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>containers - Go Documentation Server</title>
+
+<link type="text/css" rel="stylesheet" href="../../lib/godoc/style.css">
+
+<script>window.initFuncs = [];</script>
+<script src="../../lib/godoc/jquery.js" defer></script>
+
+
+
+<script>var goVersion = "go1.18.6";</script>
+<script src="../../lib/godoc/godocs.js" defer></script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="../index.html">Go Documentation Server</a></div>
+<div class="top-heading" id="heading-narrow"><a href="../index.html">GoDoc</a></div>
+<a href="index.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="http://localhost:6060/search">
+<div id="menu">
+
+<span class="search-box"><input type="search" id="search" name="q" placeholder="Search" aria-label="Search" required><button type="submit"><span><!-- magnifying glass: --><svg width="24" height="24" viewBox="0 0 24 24"><title>submit search</title><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg></span></button></span>
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>
+    Package containers
+    <span class="text-muted"></span>
+  </h1>
+
+
+
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "containers"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="index.html#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="index.html#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				
+				
+			</div>
+		</div>
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+			
+			
+			
+				
+				<dd><a href="index.html#CloudFunction">type CloudFunction</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#InheritCloudFunction">func InheritCloudFunction(overrides ICloudFunctionOverrides) *CloudFunction</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#InheritCloudFunctionWithParams">func InheritCloudFunctionWithParams(overrides ICloudFunctionOverrides, name string, description string) *CloudFunction</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewCloudFunction">func NewCloudFunction() *CloudFunction</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewCloudFunctionWithParams">func NewCloudFunctionWithParams(name string, description string) *CloudFunction</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#CloudFunction.Execute">func (c *CloudFunction) Execute(res http.ResponseWriter, req *http.Request)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#CloudFunction.GetCommand">func (c *CloudFunction) GetCommand(r *http.Request) (string, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#CloudFunction.GetCorrelationId">func (c *CloudFunction) GetCorrelationId(r *http.Request) string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#CloudFunction.GetHandler">func (c *CloudFunction) GetHandler() http.HandlerFunc</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#CloudFunction.Instrument">func (c *CloudFunction) Instrument(ctx context.Context, correlationId string, name string) *rpcserv.InstrumentTiming</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#CloudFunction.Open">func (c *CloudFunction) Open(ctx context.Context, correlationId string) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#CloudFunction.Register">func (c *CloudFunction) Register()</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#CloudFunction.RegisterAction">func (c *CloudFunction) RegisterAction(cmd string, schema *cvalid.Schema, action http.HandlerFunc)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#CloudFunction.RegisterServices">func (c *CloudFunction) RegisterServices()</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#CloudFunction.Run">func (c *CloudFunction) Run(ctx context.Context)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#CloudFunction.SetConfigPath">func (c *CloudFunction) SetConfigPath(configPath string)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#CloudFunction.SetReferences">func (c *CloudFunction) SetReferences(ctx context.Context, references crefer.IReferences)</a></dd>
+				
+			
+				
+				<dd><a href="index.html#CommandableCloudFunction">type CommandableCloudFunction</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewCommandableCloudFunction">func NewCommandableCloudFunction() *CommandableCloudFunction</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewCommandableCloudFunctionWithParams">func NewCommandableCloudFunctionWithParams(name string, description string) *CommandableCloudFunction</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#CommandableCloudFunction.GetParameters">func (c *CommandableCloudFunction) GetParameters(req *http.Request) *crun.Parameters</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#CommandableCloudFunction.Register">func (c *CommandableCloudFunction) Register()</a></dd>
+				
+			
+				
+				<dd><a href="index.html#ICloudFunctionOverrides">type ICloudFunctionOverrides</a></dd>
+				
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h3>Package files</h3>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="http://localhost:6060/src/containers/CloudFunction.go">CloudFunction.go</a>
+			
+				<a href="http://localhost:6060/src/containers/CommandableCloudFunction.go">CommandableCloudFunction.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		
+
+		
+		
+		
+		
+			
+			
+			<h2 id="CloudFunction">type <a href="http://localhost:6060/src/containers/CloudFunction.go?s=2683:3289#L62">CloudFunction</a>
+				<a class="permalink" href="index.html#CloudFunction">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Abstract Google Function, that acts as a container to instantiate and run components
+and expose them via external entry point.
+</p>
+<p>
+When handling calls &#34;cmd&#34; parameter determines which what action shall be called, while
+other parameters are passed to the action itself.
+</p>
+<p>
+Container configuration for this Google Function is stored in &#34;./config/config.yml&#34; file.
+But this path can be overriden by CONFIG_PATH environment variable.
+</p>
+<pre>References
+	- *:logger:*:*:1.0							(optional) ILogger components to pass log messages
+	- *:counters:*:*:1.0						(optional) ICounters components to pass collected measurements
+	- *:service:gcp-function:*:1.0				(optional) ICloudFunctionService services to handle action requests
+	- *:service:commandable-gcp-function:*:1.0	(optional) ICloudFunctionService services to handle action requests
+
+Example:
+	type MyCloudFunction struct {
+		containers.CloudFunction
+	}
+
+	func NewMyCloudFunction() *MyCloudFunction {
+		c := MyCloudFunction{}
+		c.CloudFunction = *containers.NewCloudFunctionWithParams(&#34;mygroup&#34;, &#34;MyGroup Google Function&#34;)
+
+		return &amp;c
+	}
+
+	...
+
+	cloudFunction := NewMyCloudFunction()
+	cloudFunction.Run(ctx)
+	fmt.Println(&#34;MyCloudFunction is started&#34;)
+</pre>
+
+			<pre>type CloudFunction struct {
+    <a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-container-gox/container/">ccont</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-container-gox/container/#Container">Container</a>
+
+<span id="CloudFunction.Overrides"></span>    Overrides <a href="index.html#ICloudFunctionOverrides">ICloudFunctionOverrides</a>
+    <span class="comment">// The dependency resolver.</span>
+<span id="CloudFunction.DependencyResolver"></span>    DependencyResolver *<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-commons-gox/refer/">crefer</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-commons-gox/refer/#DependencyResolver">DependencyResolver</a>
+    <span class="comment">// The performanc counters.</span>
+<span id="CloudFunction.Counters"></span>    Counters *<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-components-gox/count/">ccount</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-components-gox/count/#CompositeCounters">CompositeCounters</a>
+    <span class="comment">// The tracer.</span>
+<span id="CloudFunction.Tracer"></span>    Tracer *<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-components-gox/trace/">ctrace</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-components-gox/trace/#CompositeTracer">CompositeTracer</a>
+    <span class="comment">// The map of registred validation schemas.</span>
+<span id="CloudFunction.Schemas"></span>    Schemas map[<a href="http://localhost:6060/pkg/builtin/#string">string</a>]*<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-commons-gox/validate/">cvalid</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-commons-gox/validate/#Schema">Schema</a>
+    <span class="comment">// The map of registered actions.</span>
+<span id="CloudFunction.Actions"></span>    Actions map[<a href="http://localhost:6060/pkg/builtin/#string">string</a>]<a href="http://localhost:6060/pkg/net/http/">http</a>.<a href="http://localhost:6060/pkg/net/http/#HandlerFunc">HandlerFunc</a>
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="InheritCloudFunction">func <a href="http://localhost:6060/src/containers/CloudFunction.go?s=4790:4865#L124">InheritCloudFunction</a>
+					<a class="permalink" href="index.html#InheritCloudFunction">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func InheritCloudFunction(overrides <a href="index.html#ICloudFunctionOverrides">ICloudFunctionOverrides</a>) *<a href="index.html#CloudFunction">CloudFunction</a></pre>
+				<p>
+InheritCloudFunction creates new instance of CloudFunction
+</p>
+
+				
+				
+			
+				
+				<h3 id="InheritCloudFunctionWithParams">func <a href="http://localhost:6060/src/containers/CloudFunction.go?s=5627:5745#L145">InheritCloudFunctionWithParams</a>
+					<a class="permalink" href="index.html#InheritCloudFunctionWithParams">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func InheritCloudFunctionWithParams(overrides <a href="index.html#ICloudFunctionOverrides">ICloudFunctionOverrides</a>, name <a href="http://localhost:6060/pkg/builtin/#string">string</a>, description <a href="http://localhost:6060/pkg/builtin/#string">string</a>) *<a href="index.html#CloudFunction">CloudFunction</a></pre>
+				<p>
+InheritCloudFunction creates new instance of CloudFunction
+Parameters:
+</p>
+<pre>- name		(optional) a container name (accessible via ContextInfo)
+- description		(optional) a container description (accessible via ContextInfo)
+</pre>
+
+				
+				
+			
+				
+				<h3 id="NewCloudFunction">func <a href="http://localhost:6060/src/containers/CloudFunction.go?s=3354:3392#L85">NewCloudFunction</a>
+					<a class="permalink" href="index.html#NewCloudFunction">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewCloudFunction() *<a href="index.html#CloudFunction">CloudFunction</a></pre>
+				<p>
+Creates a new instance of this Google Function function.
+</p>
+
+				
+				
+			
+				
+				<h3 id="NewCloudFunctionWithParams">func <a href="http://localhost:6060/src/containers/CloudFunction.go?s=4130:4209#L106">NewCloudFunctionWithParams</a>
+					<a class="permalink" href="index.html#NewCloudFunctionWithParams">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewCloudFunctionWithParams(name <a href="http://localhost:6060/pkg/builtin/#string">string</a>, description <a href="http://localhost:6060/pkg/builtin/#string">string</a>) *<a href="index.html#CloudFunction">CloudFunction</a></pre>
+				<p>
+Creates a new instance of this Google Function function.
+Parameters:
+</p>
+<pre>- name		(optional) a container name (accessible via ContextInfo)
+- description		(optional) a container description (accessible via ContextInfo)
+</pre>
+
+				
+				
+			
+
+			
+				
+				<h3 id="CloudFunction.Execute">func (*CloudFunction) <a href="http://localhost:6060/src/containers/CloudFunction.go?s=13951:14026#L428">Execute</a>
+					<a class="permalink" href="index.html#CloudFunction.Execute">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#CloudFunction">CloudFunction</a>) Execute(res <a href="http://localhost:6060/pkg/net/http/">http</a>.<a href="http://localhost:6060/pkg/net/http/#ResponseWriter">ResponseWriter</a>, req *<a href="http://localhost:6060/pkg/net/http/">http</a>.<a href="http://localhost:6060/pkg/net/http/#Request">Request</a>)</pre>
+				<p>
+Executes this Google Function and returns the result.
+This method can be overloaded in child classes
+if they need to change the default behavior
+</p>
+<pre>Parameters:
+	- res the function response
+	- req the function request
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="CloudFunction.GetCommand">func (*CloudFunction) <a href="http://localhost:6060/src/containers/CloudFunction.go?s=15734:15801#L502">GetCommand</a>
+					<a class="permalink" href="index.html#CloudFunction.GetCommand">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#CloudFunction">CloudFunction</a>) GetCommand(r *<a href="http://localhost:6060/pkg/net/http/">http</a>.<a href="http://localhost:6060/pkg/net/http/#Request">Request</a>) (<a href="http://localhost:6060/pkg/builtin/#string">string</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+				<p>
+Returns command from Google Function request.
+This method can be overloaded in child classes
+</p>
+<pre>Parameters:
+	- req	Googel Function request
+</pre>
+<p>
+Returns command from request
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="CloudFunction.GetCorrelationId">func (*CloudFunction) <a href="http://localhost:6060/src/containers/CloudFunction.go?s=15412:15476#L493">GetCorrelationId</a>
+					<a class="permalink" href="index.html#CloudFunction.GetCorrelationId">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#CloudFunction">CloudFunction</a>) GetCorrelationId(r *<a href="http://localhost:6060/pkg/net/http/">http</a>.<a href="http://localhost:6060/pkg/net/http/#Request">Request</a>) <a href="http://localhost:6060/pkg/builtin/#string">string</a></pre>
+				<p>
+Returns correlationId from Googel Function request.
+This method can be overloaded in child classes
+</p>
+<pre>Parameters:
+	- req	Googel Function request
+</pre>
+<p>
+Returns correlationId from request
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="CloudFunction.GetHandler">func (*CloudFunction) <a href="http://localhost:6060/src/containers/CloudFunction.go?s=15134:15187#L484">GetHandler</a>
+					<a class="permalink" href="index.html#CloudFunction.GetHandler">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#CloudFunction">CloudFunction</a>) GetHandler() <a href="http://localhost:6060/pkg/net/http/">http</a>.<a href="http://localhost:6060/pkg/net/http/#HandlerFunc">HandlerFunc</a></pre>
+				<p>
+Gets entry point into this Google Function.
+</p>
+<pre>Parameters:
+	- res the function response
+	- req the function request
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="CloudFunction.Instrument">func (*CloudFunction) <a href="http://localhost:6060/src/containers/CloudFunction.go?s=8700:8816#L257">Instrument</a>
+					<a class="permalink" href="index.html#CloudFunction.Instrument">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#CloudFunction">CloudFunction</a>) Instrument(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, correlationId <a href="http://localhost:6060/pkg/builtin/#string">string</a>, name <a href="http://localhost:6060/pkg/builtin/#string">string</a>) *<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-rpc-gox/services/">rpcserv</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-rpc-gox/services/#InstrumentTiming">InstrumentTiming</a></pre>
+				<p>
+Instrument method are adds instrumentation to log calls and measure call time.
+It returns a Timing object that is used to end the time measurement.
+</p>
+<pre>Parameters:
+	- ctx context.Context
+	- correlationId     (optional) transaction id to trace execution through call chain.
+	- name              a method name.
+Returns: Timing object to end the time measurement.
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="CloudFunction.Open">func (*CloudFunction) <a href="http://localhost:6060/src/containers/CloudFunction.go?s=8071:8148#L236">Open</a>
+					<a class="permalink" href="index.html#CloudFunction.Open">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#CloudFunction">CloudFunction</a>) Open(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, correlationId <a href="http://localhost:6060/pkg/builtin/#string">string</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				<p>
+Open opens the component.
+</p>
+<pre>Parameters:
+	- ctx context.Context
+	- correlationId: string transaction id to trace execution through call chain.
+Return: error
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="CloudFunction.Register">func (*CloudFunction) <a href="http://localhost:6060/src/containers/CloudFunction.go?s=6274:6308#L162">Register</a>
+					<a class="permalink" href="index.html#CloudFunction.Register">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#CloudFunction">CloudFunction</a>) Register()</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="CloudFunction.RegisterAction">func (*CloudFunction) <a href="http://localhost:6060/src/containers/CloudFunction.go?s=12414:12512#L369">RegisterAction</a>
+					<a class="permalink" href="index.html#CloudFunction.RegisterAction">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#CloudFunction">CloudFunction</a>) RegisterAction(cmd <a href="http://localhost:6060/pkg/builtin/#string">string</a>, schema *<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-commons-gox/validate/">cvalid</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-commons-gox/validate/#Schema">Schema</a>, action <a href="http://localhost:6060/pkg/net/http/">http</a>.<a href="http://localhost:6060/pkg/net/http/#HandlerFunc">HandlerFunc</a>)</pre>
+				<p>
+Registers an action in this Google Function.
+</p>
+<pre>Parameters:
+	- cmd		a action/command name.
+	- schema	a validation schema to validate received parameters.
+	- action	an action function that is called when action is invoked.
+</pre>
+<p>
+Deprecated: This method has been deprecated. Use CloudFunctionService instead.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="CloudFunction.RegisterServices">func (*CloudFunction) <a href="http://localhost:6060/src/containers/CloudFunction.go?s=11303:11345#L344">RegisterServices</a>
+					<a class="permalink" href="index.html#CloudFunction.RegisterServices">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#CloudFunction">CloudFunction</a>) RegisterServices()</pre>
+				<p>
+Registers all Google Function services in the container.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="CloudFunction.Run">func (*CloudFunction) <a href="http://localhost:6060/src/containers/CloudFunction.go?s=9416:9464#L273">Run</a>
+					<a class="permalink" href="index.html#CloudFunction.Run">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#CloudFunction">CloudFunction</a>) Run(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>)</pre>
+				<p>
+Runs this Google Function, loads container configuration,
+instantiate components and manage their lifecycle,
+makes this function ready to access action calls.
+</p>
+<pre>Parameters:
+	- ctx context.Context
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="CloudFunction.SetConfigPath">func (*CloudFunction) <a href="http://localhost:6060/src/containers/CloudFunction.go?s=6419:6475#L167">SetConfigPath</a>
+					<a class="permalink" href="index.html#CloudFunction.SetConfigPath">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#CloudFunction">CloudFunction</a>) SetConfigPath(configPath <a href="http://localhost:6060/pkg/builtin/#string">string</a>)</pre>
+				<p>
+SetConfigPath set path for configuration file
+Parameters:
+</p>
+<pre>- configPath	path to config file
+</pre>
+
+				
+				
+				
+			
+				
+				<h3 id="CloudFunction.SetReferences">func (*CloudFunction) <a href="http://localhost:6060/src/containers/CloudFunction.go?s=7674:7763#L224">SetReferences</a>
+					<a class="permalink" href="index.html#CloudFunction.SetReferences">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#CloudFunction">CloudFunction</a>) SetReferences(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, references <a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-commons-gox/refer/">crefer</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-commons-gox/refer/#IReferences">IReferences</a>)</pre>
+				<p>
+SetReferences sets references to dependent components.
+</p>
+<pre>see IReferences
+Parameters:
+	- ctx context.Context
+	- references IReferences references to locate the component dependencies.
+</pre>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="CommandableCloudFunction">type <a href="http://localhost:6060/src/containers/CommandableCloudFunction.go?s=1834:1891#L36">CommandableCloudFunction</a>
+				<a class="permalink" href="index.html#CommandableCloudFunction">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Abstract Google Function function, that acts as a container to instantiate and run components
+and expose them via external entry point. All actions are automatically generated for commands
+defined in ICommandable components. Each command is exposed as an action defined by &#34;cmd&#34; parameter.
+</p>
+<p>
+Container configuration for this Google Function is stored in &#34;./config/config.yml&#34; file.
+But this path can be overridden by &lt;code&gt;CONFIG_PATH&lt;/code&gt; environment variable.
+</p>
+<pre>References
+	- *:logger:*:*:1.0							(optional) ILogger components to pass log messages
+	- *:counters:*:*:1.0						(optional) ICounters components to pass collected measurements
+	- *:service:gcp-function:*:1.0       		(optional) ICloudFunctionService services to handle action requests
+	- *:service:commandable-gcp-function:*:1.0	(optional) ICloudFunctionService services to handle action requests
+
+Example:
+	type MyCloudFunction struct {
+		containers.CommandableCloudFunction
+		controller IMyController
+	}
+
+	func NewMyCloudFunction() *MyCloudFunction {
+		c := MyCloudFunction{}
+		c.CloudFunction = *containers.NewCommandableCloudFunctionWithParams(&#34;mygroup&#34;, &#34;MyGroup CloudFunction&#34;)
+
+		return &amp;c
+	}
+
+	...
+
+	cloudFunction := NewMyCloudFunction()
+	cloudFunction.Run(ctx)
+	fmt.Println(&#34;MyCloudFunction is started&#34;)
+</pre>
+<p>
+Deprecated: This component has been deprecated. Use CloudFunctionService instead.
+</p>
+
+			<pre>type CommandableCloudFunction struct {
+    <a href="index.html#CloudFunction">CloudFunction</a>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewCommandableCloudFunction">func <a href="http://localhost:6060/src/containers/CommandableCloudFunction.go?s=1947:2007#L41">NewCommandableCloudFunction</a>
+					<a class="permalink" href="index.html#NewCommandableCloudFunction">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewCommandableCloudFunction() *<a href="index.html#CommandableCloudFunction">CommandableCloudFunction</a></pre>
+				<p>
+Creates a new instance of this Google Function.
+</p>
+
+				
+				
+			
+				
+				<h3 id="NewCommandableCloudFunctionWithParams">func <a href="http://localhost:6060/src/containers/CommandableCloudFunction.go?s=2328:2429#L51">NewCommandableCloudFunctionWithParams</a>
+					<a class="permalink" href="index.html#NewCommandableCloudFunctionWithParams">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewCommandableCloudFunctionWithParams(name <a href="http://localhost:6060/pkg/builtin/#string">string</a>, description <a href="http://localhost:6060/pkg/builtin/#string">string</a>) *<a href="index.html#CommandableCloudFunction">CommandableCloudFunction</a></pre>
+				<p>
+Creates a new instance of this Google Function.
+Parameters:
+</p>
+<pre>- name	(optional) a container name (accessible via ContextInfo)
+- description	(optional) a container description (accessible via ContextInfo)
+</pre>
+
+				
+				
+			
+
+			
+				
+				<h3 id="CommandableCloudFunction.GetParameters">func (*CommandableCloudFunction) <a href="http://localhost:6060/src/containers/CommandableCloudFunction.go?s=2743:2827#L62">GetParameters</a>
+					<a class="permalink" href="index.html#CommandableCloudFunction.GetParameters">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#CommandableCloudFunction">CommandableCloudFunction</a>) GetParameters(req *<a href="http://localhost:6060/pkg/net/http/">http</a>.<a href="http://localhost:6060/pkg/net/http/#Request">Request</a>) *<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-commons-gox/run/">crun</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-commons-gox/run/#Parameters">Parameters</a></pre>
+				<p>
+Returns body from Google Function request.
+This method can be overloaded in child classes
+Parameters:
+</p>
+<pre>- req	Googl Function request
+</pre>
+<p>
+Returns Parameters from request
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="CommandableCloudFunction.Register">func (*CommandableCloudFunction) <a href="http://localhost:6060/src/containers/CommandableCloudFunction.go?s=3695:3740#L87">Register</a>
+					<a class="permalink" href="index.html#CommandableCloudFunction.Register">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="index.html#CommandableCloudFunction">CommandableCloudFunction</a>) Register()</pre>
+				<p>
+Registers all actions in this Google Function.
+</p>
+<p>
+Deprecated: Overloading of this method has been deprecated. Use CloudFunctionService instead.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="ICloudFunctionOverrides">type <a href="http://localhost:6060/src/containers/CloudFunction.go?s=1131:1366#L21">ICloudFunctionOverrides</a>
+				<a class="permalink" href="index.html#ICloudFunctionOverrides">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type ICloudFunctionOverrides interface {
+    <a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-commons-gox/refer/">crefer</a>.<a href="http://localhost:6060/pkg/github.com/pip-services3-gox/pip-services3-commons-gox/refer/#IReferenceable">IReferenceable</a>
+    <span class="comment">// Registers all actions in this Google Function.</span>
+    <span class="comment">//</span>
+    <span class="comment">// Depecated: Overloading of this method has been deprecated. Use CloudFunctionService instead.</span>
+    Register()
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+<div id="footer">
+Build version go1.18.6.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="http://localhost:6060/LICENSE">BSD license</a>.<br>
+<a href="https://golang.org/doc/tos.html">Terms of Service</a> |
+<a href="https://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+</body>
+</html>
