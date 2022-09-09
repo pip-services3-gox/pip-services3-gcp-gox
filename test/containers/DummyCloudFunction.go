@@ -20,12 +20,12 @@ import (
 
 type DummyCloudFunction struct {
 	controller tlogic.IDummyController
-	gcpcont.CloudFunction
+	*gcpcont.CloudFunction
 }
 
 func NewDummyCloudFunction() *DummyCloudFunction {
 	c := DummyCloudFunction{}
-	c.CloudFunction = *gcpcont.InheritCloudFunctionWithParams(&c, "dummy", "Dummy GCP function")
+	c.CloudFunction = gcpcont.InheritCloudFunctionWithParams(&c, "dummy", "Dummy GCP function")
 	c.DependencyResolver.Put(context.Background(), "controller", crefer.NewDescriptor("pip-services-dummies", "controller", "default", "*", "*"))
 	c.AddFactory(tbuild.NewDummyFactory())
 	return &c

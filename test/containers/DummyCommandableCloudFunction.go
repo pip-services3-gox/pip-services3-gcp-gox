@@ -9,12 +9,12 @@ import (
 )
 
 type DummyCommandableCloudFunction struct {
-	gcpcont.CommandableCloudFunction
+	*gcpcont.CommandableCloudFunction
 }
 
 func NewDummyCommandableCloudFunction() *DummyCommandableCloudFunction {
 	c := DummyCommandableCloudFunction{}
-	c.CommandableCloudFunction = *gcpcont.NewCommandableCloudFunctionWithParams("dummy", "Dummy commandable cloud function")
+	c.CommandableCloudFunction = gcpcont.NewCommandableCloudFunctionWithParams("dummy", "Dummy commandable cloud function")
 	c.DependencyResolver.Put(context.Background(), "controller", crefer.NewDescriptor("pip-services-dummies", "controller", "default", "*", "*"))
 
 	c.AddFactory(tbuild.NewDummyFactory())
