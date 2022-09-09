@@ -53,12 +53,12 @@ type ICloudFunctionOverrides interface {
 //
 //	Example:
 //		type MyCloudFunction struct {
-//			containers.CloudFunction
+//			*containers.CloudFunction
 //		}
 //
 //		func NewMyCloudFunction() *MyCloudFunction {
 //			c := MyCloudFunction{}
-//			c.CloudFunction = *containers.NewCloudFunctionWithParams("mygroup", "MyGroup Google Function")
+//			c.CloudFunction = containers.NewCloudFunctionWithParams("mygroup", "MyGroup Google Function")
 //
 //			return &c
 //		}
@@ -360,8 +360,8 @@ func (c *CloudFunction) RegisterServices() {
 	// Register actions defined in those services
 	for _, service := range services {
 		// Check if the service implements required interface
-		if _, ok := service.(gcpserv.ICloudFunctionService); ok {
-			actions := service.(gcpserv.ICloudFunctionService).GetActions()
+		if _val, ok := service.(gcpserv.ICloudFunctionService); ok {
+			actions := _val.GetActions()
 			for _, action := range actions {
 				c.RegisterAction(action.Cmd, action.Schema, action.Action)
 			}

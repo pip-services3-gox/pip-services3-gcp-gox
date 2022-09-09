@@ -8,12 +8,12 @@ import (
 )
 
 type DummyCommandableCloudFunctionService struct {
-	gcpserv.CommandableCloudFunctionService
+	*gcpserv.CommandableCloudFunctionService
 }
 
 func NewDummyCommandableCloudFunctionService() *DummyCommandableCloudFunctionService {
 	c := DummyCommandableCloudFunctionService{}
-	c.CommandableCloudFunctionService = *gcpserv.NewCommandableCloudFunctionService("dummies")
+	c.CommandableCloudFunctionService = gcpserv.NewCommandableCloudFunctionService("dummies")
 	c.DependencyResolver.Put(context.Background(), "controller", crefer.NewDescriptor("pip-services-dummies", "controller", "default", "*", "*"))
 	return &c
 }

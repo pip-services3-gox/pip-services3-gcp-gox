@@ -6,11 +6,11 @@ import (
 )
 
 type DummyCloudFunction struct {
-	gcpsrv.CloudFunction
+	*gcpsrv.CloudFunction
 }
 
 func NewDummyCloudFunction() *DummyCloudFunction {
-	c := DummyCloudFunction{CloudFunction: *gcpsrv.NewCloudFunctionWithParams("dummy", "Dummy cloud function")}
+	c := DummyCloudFunction{CloudFunction: gcpsrv.NewCloudFunctionWithParams("dummy", "Dummy cloud function")}
 	c.AddFactory(tbuild.NewDummyFactory())
 	c.AddFactory(NewDummyCloudFunctionServiceFactory())
 

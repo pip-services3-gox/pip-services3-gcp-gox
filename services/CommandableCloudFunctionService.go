@@ -31,12 +31,12 @@ import (
 //
 // 	Example:
 //		type MyCommandableCloudFunctionService struct {
-//			gcpsrv.CommandableCloudFunctionService
+//			*gcpsrv.CommandableCloudFunctionService
 //		}
 //
 //		func NewMyCommandableCloudFunctionService() *MyCommandableCloudFunctionService {
 //			c := MyCommandableCloudFunctionService{}
-//			c.CommandableCloudFunctionService = *gcpsrv.NewCommandableCloudFunctionService("mydata")
+//			c.CommandableCloudFunctionService = gcpsrv.NewCommandableCloudFunctionService("mydata")
 //			c.DependencyResolver.Put(context.Background(), "controller", crefer.NewDescriptor("mygroup", "controller", "default", "*", "*"))
 //			return &c
 //		}
@@ -51,7 +51,7 @@ import (
 //		fmt.Println("The Google Function service is running")
 //
 type CommandableCloudFunctionService struct {
-	CloudFunctionService
+	*CloudFunctionService
 	commandSet *ccomand.CommandSet
 }
 
@@ -60,8 +60,7 @@ type CommandableCloudFunctionService struct {
 // 		- name 	a service name.
 func NewCommandableCloudFunctionService(name string) *CommandableCloudFunctionService {
 	c := CommandableCloudFunctionService{}
-	c.CloudFunctionService = *NewCloudFunctionService(name)
-
+	c.CloudFunctionService = InheritCloudFunctionService(&c, name)
 	return &c
 }
 
@@ -94,7 +93,7 @@ func (c *CommandableCloudFunctionService) Register() {
 		command := commands[index]
 		name := command.Name()
 
-		c.RegisterAction(c.name, nil, func(w http.ResponseWriter, r *http.Request) {
+		c.RegisterAction(name, nil, func(w http.ResponseWriter, r *http.Request) {
 			correlationId := c.GetCorrelationId(r)
 			args := c.GetParameters(r)
 			args.Remove("correlation_id")

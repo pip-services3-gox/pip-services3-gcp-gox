@@ -18,7 +18,7 @@ import (
 )
 
 type DummyCloudFunctionService struct {
-	gcpserv.CloudFunctionService
+	*gcpserv.CloudFunctionService
 
 	controller tlogic.IDummyController
 }
@@ -26,7 +26,7 @@ type DummyCloudFunctionService struct {
 func NewDummyCloudFunctionService() *DummyCloudFunctionService {
 	c := DummyCloudFunctionService{}
 
-	c.CloudFunctionService = *gcpserv.InheritCloudFunctionService(&c, "dummies")
+	c.CloudFunctionService = gcpserv.InheritCloudFunctionService(&c, "dummies")
 	c.DependencyResolver.Put(context.Background(), "controller", crefer.NewDescriptor("pip-services-dummies", "controller", "default", "*", "*"))
 
 	return &c

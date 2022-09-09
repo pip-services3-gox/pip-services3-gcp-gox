@@ -41,14 +41,14 @@ type ICloudFunctionServiceOverrides interface {
 //
 // 	Example:
 //		type MyCloudFunctionService struct {
-//			services.CloudFunctionService
+//			*services.CloudFunctionService
 //			controller IMyController
 //		}
 //
 //		func NewMyCloudFunctionService() *MyCloudFunctionService {
 //			c := MyCloudFunctionService{}
 //
-//			c.CloudFunctionService = *services.InheritCloudFunctionService(&c, "v1.myservice")
+//			c.CloudFunctionService = services.InheritCloudFunctionService(&c, "v1.myservice")
 //			c.DependencyResolver.Put(context.Background(), "controller", refer.NewDescriptor("mygroup", "controller", "default", "*", "1.0"))
 //
 //			return &c

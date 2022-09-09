@@ -25,13 +25,13 @@ import (
 //
 //	Example:
 //		type MyCloudFunction struct {
-//			containers.CommandableCloudFunction
+//			*containers.CommandableCloudFunction
 //			controller IMyController
 //		}
 //
 //		func NewMyCloudFunction() *MyCloudFunction {
 //			c := MyCloudFunction{}
-//			c.CloudFunction = *containers.NewCommandableCloudFunctionWithParams("mygroup", "MyGroup CloudFunction")
+//			c.CloudFunction = containers.NewCommandableCloudFunctionWithParams("mygroup", "MyGroup CloudFunction")
 //
 //			return &c
 //		}
@@ -44,13 +44,13 @@ import (
 //
 // Deprecated: This component has been deprecated. Use CloudFunctionService instead.
 type CommandableCloudFunction struct {
-	CloudFunction
+	*CloudFunction
 }
 
 // Creates a new instance of this Google Function.
 func NewCommandableCloudFunction() *CommandableCloudFunction {
 	c := CommandableCloudFunction{}
-	c.CloudFunction = *InheritCloudFunction(&c)
+	c.CloudFunction = InheritCloudFunction(&c)
 	return &c
 }
 
@@ -60,7 +60,7 @@ func NewCommandableCloudFunction() *CommandableCloudFunction {
 //		- description	(optional) a container description (accessible via ContextInfo)
 func NewCommandableCloudFunctionWithParams(name string, description string) *CommandableCloudFunction {
 	c := CommandableCloudFunction{}
-	c.CloudFunction = *InheritCloudFunctionWithParams(&c, name, description)
+	c.CloudFunction = InheritCloudFunctionWithParams(&c, name, description)
 	return &c
 }
 

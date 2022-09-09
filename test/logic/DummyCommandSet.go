@@ -2,6 +2,7 @@ package test_logic
 
 import (
 	"context"
+	"encoding/json"
 
 	ccomand "github.com/pip-services3-gox/pip-services3-commons-gox/commands"
 	cconv "github.com/pip-services3-gox/pip-services3-commons-gox/convert"
@@ -70,13 +71,11 @@ func (c *DummyCommandSet) makeCreateCommand() ccomand.ICommand {
 			var entity tdata.Dummy
 
 			if _val, ok := args.Get("dummy"); ok {
-				val, _ := cconv.JsonConverter.ToJson(_val)
-				data, err := cconv.JsonConverter.FromJson(val)
+				jsonStr, _ := cconv.JsonConverter.ToJson(_val)
+				err := json.Unmarshal([]byte(jsonStr), &entity)
 				if err != nil {
 					return nil, err
 				}
-
-				entity = data.(tdata.Dummy)
 			}
 
 			return c.controller.Create(ctx, correlationId, entity)
@@ -92,13 +91,11 @@ func (c *DummyCommandSet) makeUpdateCommand() ccomand.ICommand {
 			var entity tdata.Dummy
 
 			if _val, ok := args.Get("dummy"); ok {
-				val, _ := cconv.JsonConverter.ToJson(_val)
-				data, err := cconv.JsonConverter.FromJson(val)
+				jsonStr, _ := cconv.JsonConverter.ToJson(_val)
+				err := json.Unmarshal([]byte(jsonStr), &entity)
 				if err != nil {
 					return nil, err
 				}
-
-				entity = data.(tdata.Dummy)
 			}
 
 			return c.controller.Update(ctx, correlationId, entity)
