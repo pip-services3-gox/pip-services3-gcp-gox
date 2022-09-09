@@ -10,12 +10,12 @@ import (
 )
 
 type DummyCloudFunctionClient struct {
-	gcpclient.CloudFunctionClient
+	*gcpclient.CloudFunctionClient
 }
 
 func NewDummyCloudFunctionClient() *DummyCloudFunctionClient {
 	return &DummyCloudFunctionClient{
-		CloudFunctionClient: *gcpclient.NewCloudFunctionClient(),
+		CloudFunctionClient: gcpclient.NewCloudFunctionClient(),
 	}
 }
 
@@ -68,9 +68,9 @@ func (c *DummyCloudFunctionClient) UpdateDummy(ctx context.Context, correlationI
 }
 
 func (c *DummyCloudFunctionClient) DeleteDummy(ctx context.Context, correlationId string, dummyId string) (result tdata.Dummy, err error) {
-	timing := c.Instrument(ctx, correlationId, "dummies.get_dummy_by_id")
+	timing := c.Instrument(ctx, correlationId, "dummies.delete_dummy")
 
-	response, err := c.Call(ctx, "dummies.get_dummy_by_id", correlationId, cdata.NewAnyValueMapFromTuples("dummy_id", dummyId))
+	response, err := c.Call(ctx, "dummies.delete_dummy", correlationId, cdata.NewAnyValueMapFromTuples("dummy_id", dummyId))
 	if err != nil {
 		return tdata.Dummy{}, err
 	}

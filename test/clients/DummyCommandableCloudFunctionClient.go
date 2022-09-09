@@ -10,12 +10,12 @@ import (
 )
 
 type DummyCommandableCloudFunctionClient struct {
-	gcpclient.CommandableCloudFunctionClient
+	*gcpclient.CommandableCloudFunctionClient
 }
 
 func NewDummyCommandableCloudFunctionClient() *DummyCommandableCloudFunctionClient {
 	return &DummyCommandableCloudFunctionClient{
-		CommandableCloudFunctionClient: *gcpclient.NewCommandableCloudFunctionClient("dummies"),
+		CommandableCloudFunctionClient: gcpclient.NewCommandableCloudFunctionClient("dummies"),
 	}
 }
 

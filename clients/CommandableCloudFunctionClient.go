@@ -70,7 +70,7 @@ import (
 //		...
 //
 type CommandableCloudFunctionClient struct {
-	CloudFunctionClient
+	*CloudFunctionClient
 	name string
 }
 
@@ -78,7 +78,7 @@ type CommandableCloudFunctionClient struct {
 // Parameters:
 //		- name	a service name.
 func NewCommandableCloudFunctionClient(name string) *CommandableCloudFunctionClient {
-	return &CommandableCloudFunctionClient{name: name, CloudFunctionClient: *NewCloudFunctionClient()}
+	return &CommandableCloudFunctionClient{name: name, CloudFunctionClient: NewCloudFunctionClient()}
 }
 
 // Calls a remote action in Google Function.
