@@ -84,33 +84,31 @@ import (
 //		result := client.GetData("123", "1")
 //
 type CloudFunctionClient struct {
-	//The HTTP client.
+	// The HTTP client.
 	Client *http.Client
 	// The Google Function connection parameters
 	Connection *gcpconn.GcpConnectionParams
-	//The number of retries.
+	// The number of retries.
 	Retries int
 	// The default headers to be added to every request.
 	Headers *cdata.StringValueMap
-	//The connection timeout in milliseconds.
+	// The connection timeout in milliseconds.
 	ConnectTimeout int
-	//The invocation timeout in milliseconds.
+	// The invocation timeout in milliseconds.
 	Timeout int
-	//The remote service uri which is calculated on open.
+	// The remote service uri which is calculated on open.
 	Uri string
-	//The connection resolver.
+	// The connection resolver.
 	ConnectionResolver *gcpconn.GcpConnectionResolver
-	//The dependency resolver.
+	// The dependency resolver.
 	DependencyResolver *crefer.DependencyResolver
 
-	//The logger.
+	// The logger.
 	Logger *clog.CompositeLogger
-	//The performance counters.
+	// The performance counters.
 	Counters *ccount.CompositeCounters
 	// The tracer.
 	Tracer *ctrace.CompositeTracer
-
-	defaultConfig *cconf.ConfigParams
 }
 
 const (
@@ -122,12 +120,6 @@ const (
 // Creates new instance of CloudFunctionClient
 func NewCloudFunctionClient() *CloudFunctionClient {
 	c := CloudFunctionClient{}
-
-	c.defaultConfig = cconf.NewConfigParamsFromTuples(
-		"options.connectTimeout", DefaultConnectTimeout,
-		"options.timeout", DefaultTimeout,
-		"options.retries", DefaultRetriesCount,
-	)
 
 	c.ConnectionResolver = gcpconn.NewGcpConnectionResolver()
 	c.DependencyResolver = crefer.NewDependencyResolver()
