@@ -285,14 +285,14 @@ References
 
 Example:
 	type MyCloudFunctionService struct {
-		services.CloudFunctionService
+		*services.CloudFunctionService
 		controller IMyController
 	}
 
 	func NewMyCloudFunctionService() *MyCloudFunctionService {
 		c := MyCloudFunctionService{}
 
-		c.CloudFunctionService = *services.InheritCloudFunctionService(&amp;c, &#34;v1.myservice&#34;)
+		c.CloudFunctionService = services.InheritCloudFunctionService(&amp;c, &#34;v1.myservice&#34;)
 		c.DependencyResolver.Put(context.Background(), &#34;controller&#34;, refer.NewDescriptor(&#34;mygroup&#34;, &#34;controller&#34;, &#34;default&#34;, &#34;*&#34;, &#34;1.0&#34;))
 
 		return &amp;c
@@ -688,7 +688,7 @@ Parameters:
 		
 			
 			
-			<h2 id="CommandableCloudFunctionService">type <a href="http://localhost:6060/src/services/CommandableCloudFunctionService.go?s=2037:2141#L43">CommandableCloudFunctionService</a>
+			<h2 id="CommandableCloudFunctionService">type <a href="http://localhost:6060/src/services/CommandableCloudFunctionService.go?s=2037:2142#L43">CommandableCloudFunctionService</a>
 				<a class="permalink" href="index.html#CommandableCloudFunctionService">&#xb6;</a>
 				
 				
@@ -718,12 +718,12 @@ see CloudFunctionService
 </p>
 <pre>Example:
 	type MyCommandableCloudFunctionService struct {
-		gcpsrv.CommandableCloudFunctionService
+		*gcpsrv.CommandableCloudFunctionService
 	}
 
 	func NewMyCommandableCloudFunctionService() *MyCommandableCloudFunctionService {
 		c := MyCommandableCloudFunctionService{}
-		c.CommandableCloudFunctionService = *gcpsrv.NewCommandableCloudFunctionService(&#34;mydata&#34;)
+		c.CommandableCloudFunctionService = gcpsrv.NewCommandableCloudFunctionService(&#34;mydata&#34;)
 		c.DependencyResolver.Put(context.Background(), &#34;controller&#34;, crefer.NewDescriptor(&#34;mygroup&#34;, &#34;controller&#34;, &#34;default&#34;, &#34;*&#34;, &#34;*&#34;))
 		return &amp;c
 	}
@@ -740,7 +740,7 @@ fmt.Println(&#34;The Google Function service is running&#34;)
 </pre>
 
 			<pre>type CommandableCloudFunctionService struct {
-    <a href="index.html#CloudFunctionService">CloudFunctionService</a>
+    *<a href="index.html#CloudFunctionService">CloudFunctionService</a>
     <span class="comment">// contains filtered or unexported fields</span>
 }
 </pre>
@@ -755,7 +755,7 @@ fmt.Println(&#34;The Google Function service is running&#34;)
 
 			
 				
-				<h3 id="NewCommandableCloudFunctionService">func <a href="http://localhost:6060/src/services/CommandableCloudFunctionService.go?s=2234:2319#L51">NewCommandableCloudFunctionService</a>
+				<h3 id="NewCommandableCloudFunctionService">func <a href="http://localhost:6060/src/services/CommandableCloudFunctionService.go?s=2235:2320#L51">NewCommandableCloudFunctionService</a>
 					<a class="permalink" href="index.html#NewCommandableCloudFunctionService">&#xb6;</a>
 					
 					
@@ -774,7 +774,7 @@ Parameters:
 
 			
 				
-				<h3 id="CommandableCloudFunctionService.GetParameters">func (*CommandableCloudFunctionService) <a href="http://localhost:6060/src/services/CommandableCloudFunctionService.go?s=2626:2717#L63">GetParameters</a>
+				<h3 id="CommandableCloudFunctionService.GetParameters">func (*CommandableCloudFunctionService) <a href="http://localhost:6060/src/services/CommandableCloudFunctionService.go?s=2632:2723#L62">GetParameters</a>
 					<a class="permalink" href="index.html#CommandableCloudFunctionService.GetParameters">&#xb6;</a>
 					
 					
@@ -796,7 +796,7 @@ Returns Parameters from request
 				
 			
 				
-				<h3 id="CommandableCloudFunctionService.Register">func (*CommandableCloudFunctionService) <a href="http://localhost:6060/src/services/CommandableCloudFunctionService.go?s=2835:2887#L68">Register</a>
+				<h3 id="CommandableCloudFunctionService.Register">func (*CommandableCloudFunctionService) <a href="http://localhost:6060/src/services/CommandableCloudFunctionService.go?s=2841:2893#L67">Register</a>
 					<a class="permalink" href="index.html#CommandableCloudFunctionService.Register">&#xb6;</a>
 					
 					

@@ -241,12 +241,12 @@ But this path can be overriden by CONFIG_PATH environment variable.
 
 Example:
 	type MyCloudFunction struct {
-		containers.CloudFunction
+		*containers.CloudFunction
 	}
 
 	func NewMyCloudFunction() *MyCloudFunction {
 		c := MyCloudFunction{}
-		c.CloudFunction = *containers.NewCloudFunctionWithParams(&#34;mygroup&#34;, &#34;MyGroup Google Function&#34;)
+		c.CloudFunction = containers.NewCloudFunctionWithParams(&#34;mygroup&#34;, &#34;MyGroup Google Function&#34;)
 
 		return &amp;c
 	}
@@ -352,7 +352,7 @@ Parameters:
 
 			
 				
-				<h3 id="CloudFunction.Execute">func (*CloudFunction) <a href="http://localhost:6060/src/containers/CloudFunction.go?s=13951:14026#L428">Execute</a>
+				<h3 id="CloudFunction.Execute">func (*CloudFunction) <a href="http://localhost:6060/src/containers/CloudFunction.go?s=13919:13994#L428">Execute</a>
 					<a class="permalink" href="index.html#CloudFunction.Execute">&#xb6;</a>
 					
 					
@@ -373,7 +373,7 @@ if they need to change the default behavior
 				
 			
 				
-				<h3 id="CloudFunction.GetCommand">func (*CloudFunction) <a href="http://localhost:6060/src/containers/CloudFunction.go?s=15734:15801#L502">GetCommand</a>
+				<h3 id="CloudFunction.GetCommand">func (*CloudFunction) <a href="http://localhost:6060/src/containers/CloudFunction.go?s=15702:15769#L502">GetCommand</a>
 					<a class="permalink" href="index.html#CloudFunction.GetCommand">&#xb6;</a>
 					
 					
@@ -395,7 +395,7 @@ Returns command from request
 				
 			
 				
-				<h3 id="CloudFunction.GetCorrelationId">func (*CloudFunction) <a href="http://localhost:6060/src/containers/CloudFunction.go?s=15412:15476#L493">GetCorrelationId</a>
+				<h3 id="CloudFunction.GetCorrelationId">func (*CloudFunction) <a href="http://localhost:6060/src/containers/CloudFunction.go?s=15380:15444#L493">GetCorrelationId</a>
 					<a class="permalink" href="index.html#CloudFunction.GetCorrelationId">&#xb6;</a>
 					
 					
@@ -417,7 +417,7 @@ Returns correlationId from request
 				
 			
 				
-				<h3 id="CloudFunction.GetHandler">func (*CloudFunction) <a href="http://localhost:6060/src/containers/CloudFunction.go?s=15134:15187#L484">GetHandler</a>
+				<h3 id="CloudFunction.GetHandler">func (*CloudFunction) <a href="http://localhost:6060/src/containers/CloudFunction.go?s=15102:15155#L484">GetHandler</a>
 					<a class="permalink" href="index.html#CloudFunction.GetHandler">&#xb6;</a>
 					
 					
@@ -490,7 +490,7 @@ Return: error
 				
 			
 				
-				<h3 id="CloudFunction.RegisterAction">func (*CloudFunction) <a href="http://localhost:6060/src/containers/CloudFunction.go?s=12414:12512#L369">RegisterAction</a>
+				<h3 id="CloudFunction.RegisterAction">func (*CloudFunction) <a href="http://localhost:6060/src/containers/CloudFunction.go?s=12382:12480#L369">RegisterAction</a>
 					<a class="permalink" href="index.html#CloudFunction.RegisterAction">&#xb6;</a>
 					
 					
@@ -588,7 +588,7 @@ Parameters:
 		
 			
 			
-			<h2 id="CommandableCloudFunction">type <a href="http://localhost:6060/src/containers/CommandableCloudFunction.go?s=1834:1891#L36">CommandableCloudFunction</a>
+			<h2 id="CommandableCloudFunction">type <a href="http://localhost:6060/src/containers/CommandableCloudFunction.go?s=1834:1892#L36">CommandableCloudFunction</a>
 				<a class="permalink" href="index.html#CommandableCloudFunction">&#xb6;</a>
 				
 				
@@ -610,13 +610,13 @@ But this path can be overridden by &lt;code&gt;CONFIG_PATH&lt;/code&gt; environm
 
 Example:
 	type MyCloudFunction struct {
-		containers.CommandableCloudFunction
+		*containers.CommandableCloudFunction
 		controller IMyController
 	}
 
 	func NewMyCloudFunction() *MyCloudFunction {
 		c := MyCloudFunction{}
-		c.CloudFunction = *containers.NewCommandableCloudFunctionWithParams(&#34;mygroup&#34;, &#34;MyGroup CloudFunction&#34;)
+		c.CloudFunction = containers.NewCommandableCloudFunctionWithParams(&#34;mygroup&#34;, &#34;MyGroup CloudFunction&#34;)
 
 		return &amp;c
 	}
@@ -632,7 +632,7 @@ Deprecated: This component has been deprecated. Use CloudFunctionService instead
 </p>
 
 			<pre>type CommandableCloudFunction struct {
-    <a href="index.html#CloudFunction">CloudFunction</a>
+    *<a href="index.html#CloudFunction">CloudFunction</a>
 }
 </pre>
 
@@ -646,7 +646,7 @@ Deprecated: This component has been deprecated. Use CloudFunctionService instead
 
 			
 				
-				<h3 id="NewCommandableCloudFunction">func <a href="http://localhost:6060/src/containers/CommandableCloudFunction.go?s=1947:2007#L41">NewCommandableCloudFunction</a>
+				<h3 id="NewCommandableCloudFunction">func <a href="http://localhost:6060/src/containers/CommandableCloudFunction.go?s=1948:2008#L41">NewCommandableCloudFunction</a>
 					<a class="permalink" href="index.html#NewCommandableCloudFunction">&#xb6;</a>
 					
 					
@@ -680,7 +680,7 @@ Parameters:
 
 			
 				
-				<h3 id="CommandableCloudFunction.GetParameters">func (*CommandableCloudFunction) <a href="http://localhost:6060/src/containers/CommandableCloudFunction.go?s=2743:2827#L62">GetParameters</a>
+				<h3 id="CommandableCloudFunction.GetParameters">func (*CommandableCloudFunction) <a href="http://localhost:6060/src/containers/CommandableCloudFunction.go?s=2742:2826#L62">GetParameters</a>
 					<a class="permalink" href="index.html#CommandableCloudFunction.GetParameters">&#xb6;</a>
 					
 					
@@ -702,7 +702,7 @@ Returns Parameters from request
 				
 			
 				
-				<h3 id="CommandableCloudFunction.Register">func (*CommandableCloudFunction) <a href="http://localhost:6060/src/containers/CommandableCloudFunction.go?s=3695:3740#L87">Register</a>
+				<h3 id="CommandableCloudFunction.Register">func (*CommandableCloudFunction) <a href="http://localhost:6060/src/containers/CommandableCloudFunction.go?s=3694:3739#L87">Register</a>
 					<a class="permalink" href="index.html#CommandableCloudFunction.Register">&#xb6;</a>
 					
 					
