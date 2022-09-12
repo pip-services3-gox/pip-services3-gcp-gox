@@ -227,7 +227,7 @@ func (c *GcpConnectionParams) Validate(correlationId string) error {
 	_, regionOk := c.Region()
 	_, projectIdOk := c.ProjectId()
 
-	if !uriOk && (!projectIdOk && !regionOk && !functionNameOk && !protocolOk) {
+	if !uriOk && (!projectIdOk || !regionOk || !functionNameOk || !protocolOk) {
 		return cerr.NewConfigError(
 			correlationId,
 			"NO_CONNECTION_URI",
