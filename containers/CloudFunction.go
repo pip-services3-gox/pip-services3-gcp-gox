@@ -378,7 +378,7 @@ func (c *CloudFunction) RegisterServices() {
 // Deprecated: This method has been deprecated. Use CloudFunctionService instead.
 func (c *CloudFunction) RegisterAction(cmd string, schema *cvalid.Schema, action http.HandlerFunc) {
 	if cmd == "" {
-		panic("NO_COMMAND: Missing command")
+		panic("NO_COMMAND: cmd parameter is missing")
 	}
 
 	if action == nil {
