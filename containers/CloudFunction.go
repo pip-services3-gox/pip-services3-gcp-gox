@@ -323,7 +323,7 @@ func (c *CloudFunction) Run(ctx context.Context) {
 		return
 	}
 
-	ch := make(chan os.Signal)
+	ch := make(chan os.Signal, 1)
 	signal.Notify(ch, os.Interrupt, syscall.SIGINT, syscall.SIGTERM, syscall.SIGQUIT, syscall.SIGHUP, syscall.SIGABRT)
 
 	select {
