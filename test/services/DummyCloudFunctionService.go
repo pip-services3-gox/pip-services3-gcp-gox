@@ -178,7 +178,7 @@ func (c *DummyCloudFunctionService) Register() {
 
 	c.RegisterAction(
 		"get_dummies",
-		&cvalid.NewObjectSchema().WithOptionalProperty(
+		cvalid.NewObjectSchema().WithOptionalProperty(
 			"body", cvalid.NewObjectSchema().WithOptionalProperty(
 				"filter", cvalid.NewFilterParamsSchema())).WithOptionalProperty(
 			"paging", cvalid.NewPagingParamsSchema()).Schema,
@@ -187,25 +187,25 @@ func (c *DummyCloudFunctionService) Register() {
 
 	c.RegisterAction(
 		"get_dummy_by_id",
-		&cvalid.NewObjectSchema().WithRequiredProperty("body", cvalid.NewObjectSchema().WithRequiredProperty("dummy_id", cconv.String)).Schema,
+		cvalid.NewObjectSchema().WithRequiredProperty("body", cvalid.NewObjectSchema().WithRequiredProperty("dummy_id", cconv.String)).Schema,
 		c.getOneById,
 	)
 
 	c.RegisterAction(
 		"create_dummy",
-		&cvalid.NewObjectSchema().WithRequiredProperty("body", cvalid.NewObjectSchema().WithRequiredProperty("dummy", tdata.NewDummySchema())).Schema,
+		cvalid.NewObjectSchema().WithRequiredProperty("body", cvalid.NewObjectSchema().WithRequiredProperty("dummy", tdata.NewDummySchema())).Schema,
 		c.create,
 	)
 
 	c.RegisterAction(
 		"update_dummy",
-		&cvalid.NewObjectSchema().WithRequiredProperty("body", cvalid.NewObjectSchema().WithRequiredProperty("dummy", tdata.NewDummySchema())).Schema,
+		cvalid.NewObjectSchema().WithRequiredProperty("body", cvalid.NewObjectSchema().WithRequiredProperty("dummy", tdata.NewDummySchema())).Schema,
 		c.update,
 	)
 
 	c.RegisterAction(
 		"delete_dummy",
-		&cvalid.NewObjectSchema().WithRequiredProperty("body", cvalid.NewObjectSchema().WithRequiredProperty("dummy_id", cconv.String)).Schema,
+		cvalid.NewObjectSchema().WithRequiredProperty("body", cvalid.NewObjectSchema().WithRequiredProperty("dummy_id", cconv.String)).Schema,
 		c.deleteById,
 	)
 }

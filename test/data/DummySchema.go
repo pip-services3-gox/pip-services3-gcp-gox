@@ -6,11 +6,12 @@ import (
 )
 
 type DummySchema struct {
-	cvalid.ObjectSchema
+	*cvalid.ObjectSchema
 }
 
 func NewDummySchema() *DummySchema {
 	ds := DummySchema{}
+	ds.ObjectSchema = cvalid.NewObjectSchema()
 	ds.WithOptionalProperty("id", cconv.String)
 	ds.WithRequiredProperty("key", cconv.String)
 	ds.WithOptionalProperty("content", cconv.String)

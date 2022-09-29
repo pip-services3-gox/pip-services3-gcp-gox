@@ -127,7 +127,7 @@ func NewCloudFunctionService(name string) *CloudFunctionService {
 		DependencyResolver: crefer.NewDependencyResolver(),
 		Logger:             clog.NewCompositeLogger(),
 		Counters:           ccount.NewCompositeCounters(),
-		Tracer:             ctrace.NewCompositeTracer(context.Background(), nil),
+		Tracer:             ctrace.NewCompositeTracer(),
 	}
 
 	c.Overrides = &c
@@ -145,7 +145,7 @@ func InheritCloudFunctionService(overrides ICloudFunctionServiceOverrides, name 
 		DependencyResolver: crefer.NewDependencyResolver(),
 		Logger:             clog.NewCompositeLogger(),
 		Counters:           ccount.NewCompositeCounters(),
-		Tracer:             ctrace.NewCompositeTracer(context.Background(), nil),
+		Tracer:             ctrace.NewCompositeTracer(),
 	}
 }
 
