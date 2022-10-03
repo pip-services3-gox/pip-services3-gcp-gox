@@ -47,19 +47,19 @@ import (
 //		authToken, _ := connection.AuthToken()   // Result: "1234"
 //
 type GcpConnectionParams struct {
-	cconf.ConfigParams
+	*cconf.ConfigParams
 }
 
 // Creates an new instance of the connection parameters.
 func NewEmptyGcpConnectionParams() *GcpConnectionParams {
-	return &GcpConnectionParams{ConfigParams: *cconf.NewEmptyConfigParams()}
+	return &GcpConnectionParams{ConfigParams: cconf.NewEmptyConfigParams()}
 }
 
 // Creates an new instance of the connection parameters.
 // Parameters:
 //		- values	(optional) an object to be converted into key-value pairs to initialize this connection.
 func NewGcpConnectionParams(values map[string]string) *GcpConnectionParams {
-	return &GcpConnectionParams{ConfigParams: *cconf.NewConfigParamsFromMaps(values)}
+	return &GcpConnectionParams{ConfigParams: cconf.NewConfigParamsFromMaps(values)}
 }
 
 // Creates a new GcpConnectionParams object filled with key-value pairs serialized as a string.
