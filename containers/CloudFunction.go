@@ -70,7 +70,7 @@ type ICloudFunctionOverrides interface {
 //		fmt.Println("MyCloudFunction is started")
 //
 type CloudFunction struct {
-	ccont.Container
+	*ccont.Container
 
 	Overrides ICloudFunctionOverrides
 	// The dependency resolver.
@@ -102,7 +102,7 @@ func NewCloudFunction() *CloudFunction {
 		configPath:         "./config/config.yml",
 	}
 
-	c.Container = *ccont.InheritContainer("", "", &c)
+	c.Container = ccont.InheritContainer("", "", &c)
 	c.Overrides = &c
 	c.SetLogger(clog.NewConsoleLogger())
 
@@ -123,7 +123,7 @@ func NewCloudFunctionWithParams(name string, description string) *CloudFunction 
 		configPath:         "./config/config.yml",
 	}
 
-	c.Container = *ccont.InheritContainer(name, description, &c)
+	c.Container = ccont.InheritContainer(name, description, &c)
 	c.Overrides = &c
 	c.SetLogger(clog.NewConsoleLogger())
 
@@ -142,7 +142,7 @@ func InheritCloudFunction(overrides ICloudFunctionOverrides) *CloudFunction {
 		configPath:         "./config/config.yml",
 	}
 
-	c.Container = *ccont.InheritContainer("", "", overrides)
+	c.Container = ccont.InheritContainer("", "", overrides)
 	c.SetLogger(clog.NewConsoleLogger())
 
 	return &c
@@ -163,7 +163,7 @@ func InheritCloudFunctionWithParams(overrides ICloudFunctionOverrides, name stri
 		configPath:         "./config/config.yml",
 	}
 
-	c.Container = *ccont.InheritContainer("", "", overrides)
+	c.Container = ccont.InheritContainer("", "", overrides)
 	c.SetLogger(clog.NewConsoleLogger())
 
 	return &c
