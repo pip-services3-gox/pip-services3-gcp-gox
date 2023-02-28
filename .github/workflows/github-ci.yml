@@ -3,14 +3,17 @@ name: Pip.Services GCP Gox Delivery
 # Configure trigger rules
 on: 
   push:
+    branches:
+      - main
     paths:
     - '**'
     - '!README.md'
+  workflow_dispatch:
 
 jobs:
   # Setup job
   setup:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     if: "!contains(github.event.head_commit.message, '[skip-ci]')"
 
     steps:
@@ -21,7 +24,8 @@ jobs:
       shell: bash
       run: |
         rm -rf script-delivery-ps
-        git clone ${{ secrets.SCRIPTS_DELIVERY_PS_GIT_URL }} script-delivery-ps
+        git clone ${{ secrets.SCRIPTS_DELIVERY_PS_GIT_URL }} eic-templates-cicd-ps
+        cp -r eic-templates-cicd-ps/script-delivery-ps script-delivery-ps
 
     - name: Execute increment script
       shell: bash
@@ -42,7 +46,7 @@ jobs:
   # Authoring job
   authoring:
     needs: setup
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
 
     steps:
     - name: Checkout source code
@@ -85,7 +89,7 @@ jobs:
   measure:
     needs: authoring
     if: always()
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
 
     steps: 
     - name: Get cached intermediate data
@@ -99,5 +103,5 @@ jobs:
     - name: Execute measure script
       env:
         name: $(echo '${{ github.repository }}' | awk -F '/' '{print $2}')
-      run: ./script-delivery-ps/measure/measure.ps1 ${{ github.repository_owner }} ${{ env.name }} ${{ secrets.AWS_ACCESS_KEY_ID }} ${{ secrets.AWS_SECRET_ACCESS_KEY }} ${{ secrets.AWS_S3_BUCKET }} ${{ secrets.GITHUB_TOKEN }}
+      run: ./script-delivery-ps/measure/measure.ps1 ${{ github.repository_owner }} ${{ env.name }} ${{ secrets.AWS_ACCESS_KEY_ID }} ${{ secrets.AWS_SECRET_ACCESS_KEY }} ${{ secrets.AWS_S3_BUCKET }} ${{ secrets.AWS_S3_BUCKET_FOLDER }} ${{ secrets.GITHUB_TOKEN }}
       shell: bash
