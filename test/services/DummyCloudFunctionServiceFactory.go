@@ -18,8 +18,8 @@ func NewDummyCloudFunctionServiceFactory() *DummyCloudFunctionServiceFactory {
 	c := DummyCloudFunctionServiceFactory{
 		Factory:                   *cbuild.NewFactory(),
 		Descriptor:                cref.NewDescriptor("pip-services-dummies", "factory", "default", "default", "1.0"),
-		CloudServiceDescriptor:    cref.NewDescriptor("pip-services-dummies", "service", "gcp-function", "*", "1.0"),
-		CmdCloudServiceDescriptor: cref.NewDescriptor("pip-services-dummies", "service", "commandable-gcp-function", "*", "1.0"),
+		CloudServiceDescriptor:    cref.NewDescriptor("pip-services-dummies", "service", "cloudfunc", "*", "1.0"),
+		CmdCloudServiceDescriptor: cref.NewDescriptor("pip-services-dummies", "service", "commandable-cloudfunc", "*", "1.0"),
 	}
 
 	c.RegisterType(c.CloudServiceDescriptor, NewDummyCloudFunctionService)

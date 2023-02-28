@@ -48,8 +48,8 @@ type ICloudFunctionOverrides interface {
 // 	References
 //		- *:logger:*:*:1.0							(optional) ILogger components to pass log messages
 //		- *:counters:*:*:1.0						(optional) ICounters components to pass collected measurements
-//		- *:service:gcp-function:*:1.0				(optional) ICloudFunctionService services to handle action requests
-//		- *:service:commandable-gcp-function:*:1.0	(optional) ICloudFunctionService services to handle action requests
+//		- *:service:cloudfunc:*:1.0				(optional) ICloudFunctionService services to handle action requests
+//		- *:service:commandable-cloudfunc:*:1.0	(optional) ICloudFunctionService services to handle action requests
 //
 //	Example:
 //		type MyCloudFunction struct {
@@ -353,8 +353,8 @@ func (c *CloudFunction) Run(ctx context.Context) {
 // Registers all Google Function services in the container.
 func (c *CloudFunction) RegisterServices() {
 	// Extract regular and commandable Google Function services from references
-	services := c.References.GetOptional(crefer.NewDescriptor("*", "service", "gcp-function", "*", "*"))
-	cmdServices := c.References.GetOptional(crefer.NewDescriptor("*", "service", "commandable-gcp-function", "*", "*"))
+	services := c.References.GetOptional(crefer.NewDescriptor("*", "service", "cloudfunc", "*", "*"))
+	cmdServices := c.References.GetOptional(crefer.NewDescriptor("*", "service", "commandable-cloudfunc", "*", "*"))
 	services = append(services, cmdServices...)
 
 	// Register actions defined in those services

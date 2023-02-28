@@ -20,8 +20,8 @@ import (
 //	References
 //		- *:logger:*:*:1.0							(optional) ILogger components to pass log messages
 //		- *:counters:*:*:1.0						(optional) ICounters components to pass collected measurements
-//		- *:service:gcp-function:*:1.0       		(optional) ICloudFunctionService services to handle action requests
-//		- *:service:commandable-gcp-function:*:1.0	(optional) ICloudFunctionService services to handle action requests
+//		- *:service:cloudfunc:*:1.0       		(optional) ICloudFunctionService services to handle action requests
+//		- *:service:commandable-cloudfunc:*:1.0	(optional) ICloudFunctionService services to handle action requests
 //
 //	Example:
 //		type MyCloudFunction struct {

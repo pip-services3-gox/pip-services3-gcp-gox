@@ -4,11 +4,11 @@ go 1.18
 
 require (
 	github.com/gorilla/mux v1.8.0
-	github.com/pip-services3-gox/pip-services3-commons-gox v1.0.7
+	github.com/pip-services3-gox/pip-services3-commons-gox v1.0.8
 	github.com/pip-services3-gox/pip-services3-components-gox v1.0.7
 	github.com/pip-services3-gox/pip-services3-container-gox v1.0.7
-	github.com/pip-services3-gox/pip-services3-rpc-gox v1.0.3
-	github.com/stretchr/testify v1.8.0
+	github.com/pip-services3-gox/pip-services3-rpc-gox v1.0.6
+	github.com/stretchr/testify v1.8.2
 )
 
 require (

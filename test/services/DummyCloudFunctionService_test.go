@@ -20,7 +20,7 @@ func newDummyCloudFunctionServiceTest() *DummyCloudFunctionServiceTest {
 func (c *DummyCloudFunctionServiceTest) setup(t *testing.T) {
 	config := cconf.NewConfigParamsFromTuples(
 		"logger.descriptor", "pip-services:logger:console:default:1.0",
-		"service.descriptor", "pip-services-dummies:service:gcp-function:default:1.0",
+		"service.descriptor", "pip-services-dummies:service:cloudfunc:default:1.0",
 	)
 
 	ctx := context.Background()
